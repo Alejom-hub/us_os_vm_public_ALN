@@ -44,7 +44,8 @@ public class SystemOS implements Runnable{
     public static final int SEED_SEGMENTS = 7401;
     public static final int SEED_PROCESS_SIZE = 9630;
     
-    public static final int MEMORY_SIZE = 1_048_576; //1MB
+    public static final int MEMORY_SIZE = 2048; //2KB (0 - 2047) - Lab BestFit/WorstFit
+    //public static final int MEMORY_SIZE = 1_048_576; //1MB
     public static final int SWAP_MEMORY_SIZE = 1_073_741_824; //1 GB
     
     protected ArrayList<Process> processes;
@@ -62,7 +63,9 @@ public class SystemOS implements Runnable{
         processes = new ArrayList();
         //initSimulationQueue();
         //initSimulationQueueSimple();
-        initSimulationQueueSimpler();
+        //initSimulationQueueSimpler();
+        //initSimulationQueueBestWorstFit();
+        initSimulationQueueClassExample();
         
 
         showProcesses();
@@ -168,6 +171,179 @@ public class SystemOS implements Runnable{
         p.addCPUInstructions(7);
         temp = new EndInstruction();
         p.addInstruction(temp);
+        processes.add(p);
+        
+        clock = 0;
+    }
+    
+    /*
+    Scenario for the BestFit / WorstFit lab (MEMORY_SIZE = 2048 bytes).
+    Each process: CPU bursts, one STORE on a logical address, CPU bursts, END.
+    The STORE duration (memory cycles) controls how long each process stays in
+    memory, so P1 and P3 leave early and open holes between P0, P2 and P4.
+    */
+    public void initSimulationQueueBestWorstFit(){
+        Process p;
+        Instruction temp;
+        
+        //Process 0 - Size 400 - Long lived
+        p = new Process(0,0);
+        p.setSize(400);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 100, (byte)10, 30);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 1 - Size 200 - Short lived (opens a 200 byte hole)
+        p = new Process(1,1);
+        p.setSize(200);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 50, (byte)11, 2);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 2 - Size 500 - Long lived
+        p = new Process(2,2);
+        p.setSize(500);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 250, (byte)12, 30);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 3 - Size 300 - Short lived (opens a 300 byte hole)
+        p = new Process(3,3);
+        p.setSize(300);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 150, (byte)13, 2);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 4 - Size 400 - Long lived (leaves a 248 byte hole at the end)
+        p = new Process(4,4);
+        p.setSize(400);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 300, (byte)14, 30);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 5 - Size 150 - Arrives when there are holes of 200, 300 and 248
+        p = new Process(5,25);
+        p.setSize(150);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 120, (byte)15, 3);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 6 - Size 40 - Arrives after P5 is placed
+        p = new Process(6,27);
+        p.setSize(40);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 10, (byte)16, 3);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        clock = 0;
+    }
+    
+    /*
+    Example scenario from the class slides (Contiguous allocation, 2KB).
+    Process ID | T-ini | T-fin | Size | Log. Add.
+        0      |    0  |   15  |  300 |  100
+        1      |   10  |   25  |  500 |   50
+        2      |   16  |   35  |  200 |  150
+        3      |   20  |   30  |   50 |   10   (table says 150, slide drawing uses 50)
+        4      |   25  |   37  |  400 |  100
+        5      |   28  |   40  |  700 |  350
+        6      |   30  |   41  |  200 |   10
+    Each process: CPU, one STORE on its logical address, CPU, END.
+    The STORE duration is tuned so the process ends at its T-fin.
+    */
+    public void initSimulationQueueClassExample(){
+        Process p;
+        Instruction temp;
+        
+        //Process 0 - T-ini 0 - T-fin 15 - Size 300 - Log. Add. 100
+        p = new Process(0,0);
+        p.setSize(300);
+        p.addCPUInstructions(1);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 100, (byte)20, 12);
+        p.addInstruction(temp);
+        p.addCPUInstructions(1);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 1 - T-ini 10 - T-fin 25 - Size 500 - Log. Add. 50
+        p = new Process(1,10);
+        p.setSize(500);
+        p.addCPUInstructions(1);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 50, (byte)21, 12);
+        p.addInstruction(temp);
+        p.addCPUInstructions(1);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 2 - T-ini 16 - T-fin 35 - Size 200 - Log. Add. 150
+        p = new Process(2,16);
+        p.setSize(200);
+        p.addCPUInstructions(1);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 150, (byte)22, 14);
+        p.addInstruction(temp);
+        p.addCPUInstructions(1);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 3 - T-ini 20 - T-fin 30 - Size 50 - Log. Add. 10
+        p = new Process(3,20);
+        p.setSize(50); //Table says 150, but the slide draws P3 in 1000-1049 (50 bytes)
+        p.addCPUInstructions(1);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 10, (byte)23, 5);
+        p.addInstruction(temp);
+        p.addCPUInstructions(1);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 4 - T-ini 25 - T-fin 37 - Size 400 - Log. Add. 100
+        p = new Process(4,25);
+        p.setSize(400);
+        p.addCPUInstructions(1);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 100, (byte)24, 7);
+        p.addInstruction(temp);
+        p.addCPUInstructions(1);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 5 - T-ini 28 - T-fin 40 - Size 700 - Log. Add. 350
+        p = new Process(5,28);
+        p.setSize(700);
+        p.addCPUInstructions(1);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 350, (byte)25, 7);
+        p.addInstruction(temp);
+        p.addCPUInstructions(1);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 6 - T-ini 30 - T-fin 41 - Size 200 - Log. Add. 10
+        p = new Process(6,30);
+        p.setSize(200);
+        p.addCPUInstructions(1);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 10, (byte)26, 5);
+        p.addInstruction(temp);
+        p.addCPUInstructions(1);
+        p.addInstruction(new EndInstruction());
         processes.add(p);
         
         clock = 0;
