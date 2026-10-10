@@ -15,6 +15,10 @@ import java.util.Random;
 import ur_os.memory.MemoryInstruction;
 import ur_os.memory.MemoryOperationType;
 import ur_os.memory.freememorymagament.FreeMemorySlotManager;
+import ur_os.memory.contiguous.PMM_Contiguous;
+import ur_os.memory.paging.PMM_Paging;
+import ur_os.memory.segmentation.PMM_Segmentation;
+import ur_os.process.ProcessState;
 import ur_os.process.EndInstruction;
 import ur_os.process.IOInstruction;
 import ur_os.process.Instruction;
@@ -50,6 +54,8 @@ public class SystemOS implements Runnable{
     
     protected ArrayList<Process> processes;
     ArrayList<Integer> execution;
+    ArrayList<Process> waitingForMemory; //Processes that arrived, but no hole could contain them yet
+    double peakExternalFragmentation;
 
     public SystemOS(SimulationType simType) {
         memory = new Memory(MEMORY_SIZE);
@@ -61,12 +67,15 @@ public class SystemOS implements Runnable{
         ioq.setOS(os);
         execution = new ArrayList();
         processes = new ArrayList();
+        waitingForMemory = new ArrayList();
+        peakExternalFragmentation = 0;
         //initSimulationQueue();
         //initSimulationQueueSimple();
         //initSimulationQueueSimpler();
         //initSimulationQueueBestWorstFit();
         //initSimulationQueueClassExample();
-        initSimulationQueueMedianFit();
+        //initSimulationQueueMedianFit();
+        initSimulationQueueFragmentation();
         
 
         showProcesses();
@@ -443,6 +452,125 @@ public class SystemOS implements Runnable{
         clock = 0;
     }
     
+    /*
+    Scenario for the Fragmentation lab (MEMORY_SIZE = 2048 bytes).
+    P0-P5 build the same memory as the MedianFit lab: when P6 arrives there
+    are 3 holes of 100 (base 100), 300 (base 400) and 600 (base 1448).
+    Then P6-P9 arrive; each algorithm splits the holes differently, so each one
+    suffers external fragmentation (enough free memory in total, but not
+    contiguous) on a different request:
+        - Worst Fit: P7 (550)
+        - Median Fit: P8 (280)
+        - Best Fit / First Fit: P9 (60)
+    The rejected process waits until a long lived process finishes.
+    */
+    public void initSimulationQueueFragmentation(){
+        Process p;
+        Instruction temp;
+
+        //Process 0 - Size 100 - Long lived
+        p = new Process(0,0);
+        p.setSize(100);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 50, (byte)40, 40);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+
+        //Process 1 - Size 100 - Short lived (opens a 100 byte hole at 100)
+        p = new Process(1,1);
+        p.setSize(100);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 20, (byte)41, 2);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+
+        //Process 2 - Size 200 - Long lived
+        p = new Process(2,2);
+        p.setSize(200);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 150, (byte)42, 40);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+
+        //Process 3 - Size 300 - Short lived (opens a 300 byte hole at 400)
+        p = new Process(3,3);
+        p.setSize(300);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 250, (byte)43, 2);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+
+        //Process 4 - Size 300 - Long lived
+        p = new Process(4,4);
+        p.setSize(300);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 200, (byte)44, 40);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+
+        //Process 5 - Size 448 - Long lived (leaves a 600 byte hole at 1448)
+        p = new Process(5,5);
+        p.setSize(448);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 400, (byte)45, 40);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+
+        //Process 6 - Size 80 - Arrives with holes of 100, 300 and 600
+        p = new Process(6,30);
+        p.setSize(80);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 60, (byte)46, 30);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+
+        //Process 7 - Size 550 - Only fits if the 600 hole was not split
+        p = new Process(7,32);
+        p.setSize(550);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 500, (byte)47, 30);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+
+        //Process 8 - Size 280
+        p = new Process(8,34);
+        p.setSize(280);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 200, (byte)48, 30);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+
+        //Process 9 - Size 60
+        p = new Process(9,36);
+        p.setSize(60);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 40, (byte)49, 30);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+
+        clock = 0;
+    }
+
     public void initSimulationQueueSimpler3(){
         
         
@@ -591,13 +719,27 @@ public class SystemOS implements Runnable{
                 System.out.println(ioq);
             }
             
+            //Processes waiting for memory are retried first, in arrival order
+            ps = new ArrayList(waitingForMemory);
+            waitingForMemory.clear();
+            for (Process p : ps) {
+                if(os.canAllocate(p.getSize(), false)){
+                    System.out.println("Process "+p.getPid()+" admitted after waiting "+(i - p.getTime_init())+" cycles for memory");
+                    createProcess(p);
+                }else{
+                    waitingForMemory.add(p);
+                }
+            }
+            
             //Crear procesos, si aplica en el ciclo actual
             ps = getProcessAtI(i);
             for (Process p : ps) {
-                os.create_process(p);
-                System.out.println("Process Created: "+p.getPid()+"\n"+p);
-                
-                showFreeMemory();
+                if(os.canAllocate(p.getSize(), true)){
+                    createProcess(p);
+                }else{
+                    System.out.println("Process "+p.getPid()+" ("+p.getSize()+" bytes) waits until a hole can contain it");
+                    waitingForMemory.add(p);
+                }
             } //If the scheduler is preemtive, this action will trigger the extraction from the CPU, is any process is there.
             
             //Actualizar el OS, quien va actualizar el Scheduler            
@@ -655,6 +797,23 @@ public class SystemOS implements Runnable{
         memory.showNotNullBytes();
         
         showFreeMemory();
+        
+        System.out.println("******Fragmentation Indicators******");
+        if(OS.SMM != MemoryManagerType.PAGING){
+            System.out.println("Free Memory Slot Manager: "+OS.MSM);
+            System.out.println("Requests rejected by external fragmentation: "+os.getExternalFragmentationRejections());
+            System.out.printf("Peak external fragmentation: %.2f%%%n", peakExternalFragmentation*100);
+        }
+        if(!waitingForMemory.isEmpty()){
+            System.out.println("Processes still waiting for memory: "+waitingForMemory.size());
+        }
+    }
+    
+    private void createProcess(Process p){
+        os.create_process(p);
+        System.out.println("Process Created: "+p.getPid()+"\n"+p);
+        
+        showFreeMemory();
     }
     
     public void showFreeMemory(){
@@ -665,6 +824,89 @@ public class SystemOS implements Runnable{
             FreeMemorySlotManager msm = (FreeMemorySlotManager)os.fmm;
             System.out.println(msm);
         }
+        showFragmentation();
+    }
+    
+    /*
+    Fragmentation calculation, following the class definitions:
+    - External fragmentation: total free memory exists to satisfy a request,
+      but it is not contiguous. Measured as 1 - (largest hole / total free).
+    - Internal fragmentation: allocated memory - requested memory, summed for
+      every process that is in memory.
+    - 50% rule: with N allocated blocks, about 0.5 N blocks (holes) are lost
+      to fragmentation (First Fit analysis).
+    */
+    public void showFragmentation(){
+        System.out.println("---Fragmentation---");
+        if(OS.SMM != MemoryManagerType.PAGING){
+            FreeMemorySlotManager msm = (FreeMemorySlotManager)os.fmm;
+            double ext = msm.getExternalFragmentation();
+            if(ext > peakExternalFragmentation){
+                peakExternalFragmentation = ext;
+            }
+            int holes = msm.getSize();
+            int blocks = countAllocatedBlocks();
+            System.out.println("Total free memory: "+msm.getTotalFreeMemory()+" bytes | Largest hole: "+msm.getLargestFreeSlot()+" bytes | Holes: "+holes);
+            System.out.printf("External fragmentation: %.2f%% (1 - largest hole / total free memory)%n", ext*100);
+            if(blocks > 0){
+                System.out.printf("50%% rule: %d holes for N = %d allocated blocks -> holes/N = %.2f (expected ~0.5)%n", holes, blocks, (double)holes/blocks);
+            }else{
+                System.out.println("50% rule: no allocated blocks");
+            }
+        }
+        System.out.println("Internal fragmentation: "+calcInternalFragmentation()+" bytes");
+    }
+    
+    //A process is in memory if it was created, it got its memory and it has not finished
+    private boolean isInMemory(Process p){
+        if(p.getState() == ProcessState.FINISHED){
+            return false;
+        }
+        switch(OS.SMM){
+            case PAGING:
+                return p.getPMM() instanceof PMM_Paging;
+            case SEGMENTATION:
+                return p.getPMM() instanceof PMM_Segmentation;
+            default:
+            case CONTIGUOUS:
+                return p.getPMM() instanceof PMM_Contiguous && ((PMM_Contiguous)p.getPMM()).isValid();
+        }
+    }
+    
+    //Number of allocated memory blocks (N): one slot per process, or one per segment
+    public int countAllocatedBlocks(){
+        int blocks = 0;
+        for (Process p : processes) {
+            if(isInMemory(p)){
+                if(p.getPMM() instanceof PMM_Segmentation){
+                    blocks += ((PMM_Segmentation)p.getPMM()).getSt().getSize();
+                }else{
+                    blocks++;
+                }
+            }
+        }
+        return blocks;
+    }
+    
+    /*Internal fragmentation: allocated memory - requested memory.
+      - Contiguous: the slot has exactly the requested size, so it is 0.
+      - Segmentation: each segment gets exactly its limit, so it is 0.
+      - Paging: the last page of the process is not full:
+        pages * PAGE_SIZE - process size.
+    */
+    public int calcInternalFragmentation(){
+        int internal = 0;
+        for (Process p : processes) {
+            if(isInMemory(p)){
+                if(p.getPMM() instanceof PMM_Paging){
+                    int pages = (p.getSize() + OS.PAGE_SIZE - 1) / OS.PAGE_SIZE;
+                    internal += pages * OS.PAGE_SIZE - p.getSize();
+                }else if(p.getPMM() instanceof PMM_Contiguous){
+                    internal += ((PMM_Contiguous)p.getPMM()).getLimit() - p.getSize();
+                }
+            }
+        }
+        return internal;
     }
     
     public void showProcesses(){

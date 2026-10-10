@@ -1,0 +1,1585 @@
+************************************
+         UR_OS V.0.0.5.4
+************************************
+Free Memory Slot Manager: WORST_FIT (WorstFitMemorySlotManager)
+Process list:
+PID: 0 Size: 0 t_init: 0 t_finished: -1
+PMM:
+MemSlot: null vSlot: Base: 0 Size: 0 Valid:false Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 40 RC: 40 T: MEMORY F: false STORE,50,40
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+PID: 1 Size: 0 t_init: 1 t_finished: -1
+PMM:
+MemSlot: null vSlot: Base: 0 Size: 0 Valid:false Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 2 RC: 2 T: MEMORY F: false STORE,20,41
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+PID: 2 Size: 0 t_init: 2 t_finished: -1
+PMM:
+MemSlot: null vSlot: Base: 0 Size: 0 Valid:false Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 40 RC: 40 T: MEMORY F: false STORE,150,42
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+PID: 3 Size: 0 t_init: 3 t_finished: -1
+PMM:
+MemSlot: null vSlot: Base: 0 Size: 0 Valid:false Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 2 RC: 2 T: MEMORY F: false STORE,250,43
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+PID: 4 Size: 0 t_init: 4 t_finished: -1
+PMM:
+MemSlot: null vSlot: Base: 0 Size: 0 Valid:false Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 40 RC: 40 T: MEMORY F: false STORE,200,44
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+PID: 5 Size: 0 t_init: 5 t_finished: -1
+PMM:
+MemSlot: null vSlot: Base: 0 Size: 0 Valid:false Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 40 RC: 40 T: MEMORY F: false STORE,400,45
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+PID: 6 Size: 0 t_init: 30 t_finished: -1
+PMM:
+MemSlot: null vSlot: Base: 0 Size: 0 Valid:false Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 30 RC: 30 T: MEMORY F: false STORE,60,46
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+PID: 7 Size: 0 t_init: 32 t_finished: -1
+PMM:
+MemSlot: null vSlot: Base: 0 Size: 0 Valid:false Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 30 RC: 30 T: MEMORY F: false STORE,500,47
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+PID: 8 Size: 0 t_init: 34 t_finished: -1
+PMM:
+MemSlot: null vSlot: Base: 0 Size: 0 Valid:false Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 30 RC: 30 T: MEMORY F: false STORE,200,48
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+PID: 9 Size: 0 t_init: 36 t_finished: -1
+PMM:
+MemSlot: null vSlot: Base: 0 Size: 0 Valid:false Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 30 RC: 30 T: MEMORY F: false STORE,40,49
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+
+******SIMULATION START******
+******Clock: 0******
+Process Created: 0
+PID: 0 Size: 100 t_init: 0 t_finished: -1
+PMM:
+MemSlot: Base: 0 Size: 100 vSlot: Base: 0 Size: 100 Valid:true Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 40 RC: 40 T: MEMORY F: false STORE,50,40
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+Free Memory Slots (1): 
+Base: 100 Size: 1948
+
+---Fragmentation---
+Total free memory: 1948 bytes | Largest hole: 1948 bytes | Holes: 1
+External fragmentation: 0.00% (1 - largest hole / total free memory)
+50% rule: 1 holes for N = 1 allocated blocks -> holes/N = 1.00 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Executing CPU instruction
+******Clock: 1******
+Process Created: 1
+PID: 1 Size: 100 t_init: 1 t_finished: -1
+PMM:
+MemSlot: Base: 100 Size: 100 vSlot: Base: 100 Size: 100 Valid:true Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 2 RC: 2 T: MEMORY F: false STORE,20,41
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+Free Memory Slots (1): 
+Base: 200 Size: 1848
+
+---Fragmentation---
+Total free memory: 1848 bytes | Largest hole: 1848 bytes | Holes: 1
+External fragmentation: 0.00% (1 - largest hole / total free memory)
+50% rule: 1 holes for N = 2 allocated blocks -> holes/N = 0.50 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Executing CPU instruction
+******Clock: 2******
+Process Created: 2
+PID: 2 Size: 200 t_init: 2 t_finished: -1
+PMM:
+MemSlot: Base: 200 Size: 200 vSlot: Base: 200 Size: 200 Valid:true Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 40 RC: 40 T: MEMORY F: false STORE,150,42
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+Free Memory Slots (1): 
+Base: 400 Size: 1648
+
+---Fragmentation---
+Total free memory: 1648 bytes | Largest hole: 1648 bytes | Holes: 1
+External fragmentation: 0.00% (1 - largest hole / total free memory)
+50% rule: 1 holes for N = 3 allocated blocks -> holes/N = 0.33 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Executing Memory instruction
+******Clock: 3******
+Process Created: 3
+PID: 3 Size: 300 t_init: 3 t_finished: -1
+PMM:
+MemSlot: Base: 400 Size: 300 vSlot: Base: 400 Size: 300 Valid:true Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 2 RC: 2 T: MEMORY F: false STORE,250,43
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+Free Memory Slots (1): 
+Base: 700 Size: 1348
+
+---Fragmentation---
+Total free memory: 1348 bytes | Largest hole: 1348 bytes | Holes: 1
+External fragmentation: 0.00% (1 - largest hole / total free memory)
+50% rule: 1 holes for N = 4 allocated blocks -> holes/N = 0.25 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 39 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 38 cycles left
+******Clock: 4******
+Process Created: 4
+PID: 4 Size: 300 t_init: 4 t_finished: -1
+PMM:
+MemSlot: Base: 700 Size: 300 vSlot: Base: 700 Size: 300 Valid:true Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 40 RC: 40 T: MEMORY F: false STORE,200,44
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+Free Memory Slots (1): 
+Base: 1000 Size: 1048
+
+---Fragmentation---
+Total free memory: 1048 bytes | Largest hole: 1048 bytes | Holes: 1
+External fragmentation: 0.00% (1 - largest hole / total free memory)
+50% rule: 1 holes for N = 5 allocated blocks -> holes/N = 0.20 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 38 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 37 cycles left
+******Clock: 5******
+Process Created: 5
+PID: 5 Size: 448 t_init: 5 t_finished: -1
+PMM:
+MemSlot: Base: 1000 Size: 448 vSlot: Base: 1000 Size: 448 Valid:true Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 40 RC: 40 T: MEMORY F: false STORE,400,45
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+Free Memory Slots (1): 
+Base: 1448 Size: 600
+
+---Fragmentation---
+Total free memory: 600 bytes | Largest hole: 600 bytes | Holes: 1
+External fragmentation: 0.00% (1 - largest hole / total free memory)
+50% rule: 1 holes for N = 6 allocated blocks -> holes/N = 0.17 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Executing Memory instruction
+Process 0 is executing C: 40 RC: 37 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 36 cycles left
+******Clock: 6******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 36 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 35 cycles left
+Process 1 is executing C: 2 RC: 1 T: MEMORY F: false STORE,20,41
+The data 41 is stored in: 120
+MEMORY OPERATION EXECUTION DONE
+******Clock: 7******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 35 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 34 cycles left
+******Clock: 8******
+Executing Memory instruction
+Process 0 is executing C: 40 RC: 34 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 33 cycles left
+******Clock: 9******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 33 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 32 cycles left
+Process 2 is executing C: 40 RC: 39 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 38 cycles left
+******Clock: 10******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 32 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 31 cycles left
+Process 2 is executing C: 40 RC: 38 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 37 cycles left
+******Clock: 11******
+Executing Memory instruction
+Process 0 is executing C: 40 RC: 31 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 30 cycles left
+Process 2 is executing C: 40 RC: 37 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 36 cycles left
+******Clock: 12******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 30 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 29 cycles left
+Process 2 is executing C: 40 RC: 36 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 35 cycles left
+Process 3 is executing C: 2 RC: 1 T: MEMORY F: false STORE,250,43
+The data 43 is stored in: 650
+MEMORY OPERATION EXECUTION DONE
+******Clock: 13******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 29 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 28 cycles left
+Process 2 is executing C: 40 RC: 35 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 34 cycles left
+******Clock: 14******
+Executing Memory instruction
+Process 0 is executing C: 40 RC: 28 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 27 cycles left
+Process 2 is executing C: 40 RC: 34 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 33 cycles left
+******Clock: 15******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 27 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 26 cycles left
+Process 2 is executing C: 40 RC: 33 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 32 cycles left
+Process 4 is executing C: 40 RC: 39 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 38 cycles left
+******Clock: 16******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 26 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 25 cycles left
+Process 2 is executing C: 40 RC: 32 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 31 cycles left
+Process 4 is executing C: 40 RC: 38 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 37 cycles left
+******Clock: 17******
+Executing Memory instruction
+Process 0 is executing C: 40 RC: 25 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 24 cycles left
+Process 2 is executing C: 40 RC: 31 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 30 cycles left
+Process 4 is executing C: 40 RC: 37 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 36 cycles left
+******Clock: 18******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 24 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 23 cycles left
+Process 2 is executing C: 40 RC: 30 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 29 cycles left
+Process 4 is executing C: 40 RC: 36 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 35 cycles left
+Process 5 is executing C: 40 RC: 39 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 38 cycles left
+******Clock: 19******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 23 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 22 cycles left
+Process 2 is executing C: 40 RC: 29 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 28 cycles left
+Process 4 is executing C: 40 RC: 35 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 34 cycles left
+Process 5 is executing C: 40 RC: 38 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 37 cycles left
+******Clock: 20******
+Process Terminated: 1 100
+Free Memory Slots (2): 
+Base: 100 Size: 100
+Base: 1448 Size: 600
+
+---Fragmentation---
+Total free memory: 700 bytes | Largest hole: 600 bytes | Holes: 2
+External fragmentation: 14.29% (1 - largest hole / total free memory)
+50% rule: 2 holes for N = 5 allocated blocks -> holes/N = 0.40 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Process 0 is executing C: 40 RC: 22 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 21 cycles left
+Process 2 is executing C: 40 RC: 28 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 27 cycles left
+Process 4 is executing C: 40 RC: 34 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 33 cycles left
+Process 5 is executing C: 40 RC: 37 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 36 cycles left
+******Clock: 21******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 21 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 20 cycles left
+Process 2 is executing C: 40 RC: 27 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 26 cycles left
+Process 4 is executing C: 40 RC: 33 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 32 cycles left
+Process 5 is executing C: 40 RC: 36 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 35 cycles left
+******Clock: 22******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 20 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 19 cycles left
+Process 2 is executing C: 40 RC: 26 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 25 cycles left
+Process 4 is executing C: 40 RC: 32 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 31 cycles left
+Process 5 is executing C: 40 RC: 35 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 34 cycles left
+******Clock: 23******
+Process Terminated: 3 300
+Free Memory Slots (3): 
+Base: 100 Size: 100
+Base: 400 Size: 300
+Base: 1448 Size: 600
+
+---Fragmentation---
+Total free memory: 1000 bytes | Largest hole: 600 bytes | Holes: 3
+External fragmentation: 40.00% (1 - largest hole / total free memory)
+50% rule: 3 holes for N = 4 allocated blocks -> holes/N = 0.75 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Process 0 is executing C: 40 RC: 19 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 18 cycles left
+Process 2 is executing C: 40 RC: 25 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 24 cycles left
+Process 4 is executing C: 40 RC: 31 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 30 cycles left
+Process 5 is executing C: 40 RC: 34 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 33 cycles left
+******Clock: 24******
+Process 0 is executing C: 40 RC: 18 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 17 cycles left
+Process 2 is executing C: 40 RC: 24 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 23 cycles left
+Process 4 is executing C: 40 RC: 30 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 29 cycles left
+Process 5 is executing C: 40 RC: 33 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 32 cycles left
+******Clock: 25******
+Process 0 is executing C: 40 RC: 17 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 16 cycles left
+Process 2 is executing C: 40 RC: 23 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 22 cycles left
+Process 4 is executing C: 40 RC: 29 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 28 cycles left
+Process 5 is executing C: 40 RC: 32 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 31 cycles left
+******Clock: 26******
+Process 0 is executing C: 40 RC: 16 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 15 cycles left
+Process 2 is executing C: 40 RC: 22 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 21 cycles left
+Process 4 is executing C: 40 RC: 28 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 27 cycles left
+Process 5 is executing C: 40 RC: 31 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 30 cycles left
+******Clock: 27******
+Process 0 is executing C: 40 RC: 15 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 14 cycles left
+Process 2 is executing C: 40 RC: 21 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 20 cycles left
+Process 4 is executing C: 40 RC: 27 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 26 cycles left
+Process 5 is executing C: 40 RC: 30 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 29 cycles left
+******Clock: 28******
+Process 0 is executing C: 40 RC: 14 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 13 cycles left
+Process 2 is executing C: 40 RC: 20 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 19 cycles left
+Process 4 is executing C: 40 RC: 26 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 25 cycles left
+Process 5 is executing C: 40 RC: 29 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 28 cycles left
+******Clock: 29******
+Process 0 is executing C: 40 RC: 13 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 12 cycles left
+Process 2 is executing C: 40 RC: 19 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 18 cycles left
+Process 4 is executing C: 40 RC: 25 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 24 cycles left
+Process 5 is executing C: 40 RC: 28 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 27 cycles left
+******Clock: 30******
+Process Created: 6
+PID: 6 Size: 80 t_init: 30 t_finished: -1
+PMM:
+MemSlot: Base: 1448 Size: 80 vSlot: Base: 1448 Size: 80 Valid:true Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 30 RC: 30 T: MEMORY F: false STORE,60,46
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+Free Memory Slots (3): 
+Base: 100 Size: 100
+Base: 400 Size: 300
+Base: 1528 Size: 520
+
+---Fragmentation---
+Total free memory: 920 bytes | Largest hole: 520 bytes | Holes: 3
+External fragmentation: 43.48% (1 - largest hole / total free memory)
+50% rule: 3 holes for N = 5 allocated blocks -> holes/N = 0.60 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 12 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 11 cycles left
+Process 2 is executing C: 40 RC: 18 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 17 cycles left
+Process 4 is executing C: 40 RC: 24 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 23 cycles left
+Process 5 is executing C: 40 RC: 27 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 26 cycles left
+******Clock: 31******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 11 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 10 cycles left
+Process 2 is executing C: 40 RC: 17 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 16 cycles left
+Process 4 is executing C: 40 RC: 23 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 22 cycles left
+Process 5 is executing C: 40 RC: 26 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 25 cycles left
+******Clock: 32******
+EXTERNAL FRAGMENTATION - Request of 550 bytes rejected: there are 920 free bytes, but the largest hole is 520 bytes
+Process 7 (550 bytes) waits until a hole can contain it
+Executing Memory instruction
+Process 0 is executing C: 40 RC: 10 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 9 cycles left
+Process 2 is executing C: 40 RC: 16 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 15 cycles left
+Process 4 is executing C: 40 RC: 22 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 21 cycles left
+Process 5 is executing C: 40 RC: 25 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 24 cycles left
+******Clock: 33******
+Process 0 is executing C: 40 RC: 9 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 8 cycles left
+Process 2 is executing C: 40 RC: 15 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 14 cycles left
+Process 4 is executing C: 40 RC: 21 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 20 cycles left
+Process 5 is executing C: 40 RC: 24 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 23 cycles left
+Process 6 is executing C: 30 RC: 29 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 28 cycles left
+******Clock: 34******
+Process Created: 8
+PID: 8 Size: 280 t_init: 34 t_finished: -1
+PMM:
+MemSlot: Base: 1528 Size: 280 vSlot: Base: 1528 Size: 280 Valid:true Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 30 RC: 30 T: MEMORY F: false STORE,200,48
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+Free Memory Slots (3): 
+Base: 100 Size: 100
+Base: 400 Size: 300
+Base: 1808 Size: 240
+
+---Fragmentation---
+Total free memory: 640 bytes | Largest hole: 300 bytes | Holes: 3
+External fragmentation: 53.13% (1 - largest hole / total free memory)
+50% rule: 3 holes for N = 6 allocated blocks -> holes/N = 0.50 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 8 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 7 cycles left
+Process 2 is executing C: 40 RC: 14 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 13 cycles left
+Process 4 is executing C: 40 RC: 20 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 19 cycles left
+Process 5 is executing C: 40 RC: 23 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 22 cycles left
+Process 6 is executing C: 30 RC: 28 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 27 cycles left
+******Clock: 35******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 7 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 6 cycles left
+Process 2 is executing C: 40 RC: 13 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 12 cycles left
+Process 4 is executing C: 40 RC: 19 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 18 cycles left
+Process 5 is executing C: 40 RC: 22 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 21 cycles left
+Process 6 is executing C: 30 RC: 27 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 26 cycles left
+******Clock: 36******
+Process Created: 9
+PID: 9 Size: 60 t_init: 36 t_finished: -1
+PMM:
+MemSlot: Base: 400 Size: 60 vSlot: Base: 1808 Size: 60 Valid:true Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 30 RC: 30 T: MEMORY F: false STORE,40,49
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+Free Memory Slots (3): 
+Base: 100 Size: 100
+Base: 460 Size: 240
+Base: 1808 Size: 240
+
+---Fragmentation---
+Total free memory: 580 bytes | Largest hole: 240 bytes | Holes: 3
+External fragmentation: 58.62% (1 - largest hole / total free memory)
+50% rule: 3 holes for N = 7 allocated blocks -> holes/N = 0.43 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Executing Memory instruction
+Process 0 is executing C: 40 RC: 6 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 5 cycles left
+Process 2 is executing C: 40 RC: 12 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 11 cycles left
+Process 4 is executing C: 40 RC: 18 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 17 cycles left
+Process 5 is executing C: 40 RC: 21 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 20 cycles left
+Process 6 is executing C: 30 RC: 26 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 25 cycles left
+******Clock: 37******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 5 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 4 cycles left
+Process 2 is executing C: 40 RC: 11 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 10 cycles left
+Process 4 is executing C: 40 RC: 17 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 16 cycles left
+Process 5 is executing C: 40 RC: 20 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 19 cycles left
+Process 6 is executing C: 30 RC: 25 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 24 cycles left
+Process 8 is executing C: 30 RC: 29 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 28 cycles left
+******Clock: 38******
+Executing CPU instruction
+Process 0 is executing C: 40 RC: 4 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 3 cycles left
+Process 2 is executing C: 40 RC: 10 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 9 cycles left
+Process 4 is executing C: 40 RC: 16 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 15 cycles left
+Process 5 is executing C: 40 RC: 19 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 18 cycles left
+Process 6 is executing C: 30 RC: 24 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 23 cycles left
+Process 8 is executing C: 30 RC: 28 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 27 cycles left
+******Clock: 39******
+Executing Memory instruction
+Process 0 is executing C: 40 RC: 3 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 2 cycles left
+Process 2 is executing C: 40 RC: 9 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 8 cycles left
+Process 4 is executing C: 40 RC: 15 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 14 cycles left
+Process 5 is executing C: 40 RC: 18 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 17 cycles left
+Process 6 is executing C: 30 RC: 23 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 22 cycles left
+Process 8 is executing C: 30 RC: 27 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 26 cycles left
+******Clock: 40******
+Process 0 is executing C: 40 RC: 2 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION - 1 cycles left
+Process 2 is executing C: 40 RC: 8 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 7 cycles left
+Process 4 is executing C: 40 RC: 14 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 13 cycles left
+Process 5 is executing C: 40 RC: 17 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 16 cycles left
+Process 6 is executing C: 30 RC: 22 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 21 cycles left
+Process 8 is executing C: 30 RC: 26 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 25 cycles left
+Process 9 is executing C: 30 RC: 29 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 28 cycles left
+******Clock: 41******
+Process 0 is executing C: 40 RC: 1 T: MEMORY F: false STORE,50,40
+The data 40 is stored in: 50
+MEMORY OPERATION EXECUTION DONE
+Process 2 is executing C: 40 RC: 7 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 6 cycles left
+Process 4 is executing C: 40 RC: 13 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 12 cycles left
+Process 5 is executing C: 40 RC: 16 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 15 cycles left
+Process 6 is executing C: 30 RC: 21 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 20 cycles left
+Process 8 is executing C: 30 RC: 25 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 24 cycles left
+Process 9 is executing C: 30 RC: 28 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 27 cycles left
+******Clock: 42******
+Executing CPU instruction
+Process 2 is executing C: 40 RC: 6 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 5 cycles left
+Process 4 is executing C: 40 RC: 12 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 11 cycles left
+Process 5 is executing C: 40 RC: 15 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 14 cycles left
+Process 6 is executing C: 30 RC: 20 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 19 cycles left
+Process 8 is executing C: 30 RC: 24 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 23 cycles left
+Process 9 is executing C: 30 RC: 27 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 26 cycles left
+******Clock: 43******
+Executing CPU instruction
+Process 2 is executing C: 40 RC: 5 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 4 cycles left
+Process 4 is executing C: 40 RC: 11 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 10 cycles left
+Process 5 is executing C: 40 RC: 14 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 13 cycles left
+Process 6 is executing C: 30 RC: 19 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 18 cycles left
+Process 8 is executing C: 30 RC: 23 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 22 cycles left
+Process 9 is executing C: 30 RC: 26 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 25 cycles left
+******Clock: 44******
+Process Terminated: 0 100
+Free Memory Slots (3): 
+Base: 0 Size: 200
+Base: 460 Size: 240
+Base: 1808 Size: 240
+
+---Fragmentation---
+Total free memory: 680 bytes | Largest hole: 240 bytes | Holes: 3
+External fragmentation: 64.71% (1 - largest hole / total free memory)
+50% rule: 3 holes for N = 6 allocated blocks -> holes/N = 0.50 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Process 2 is executing C: 40 RC: 4 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 3 cycles left
+Process 4 is executing C: 40 RC: 10 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 9 cycles left
+Process 5 is executing C: 40 RC: 13 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 12 cycles left
+Process 6 is executing C: 30 RC: 18 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 17 cycles left
+Process 8 is executing C: 30 RC: 22 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 21 cycles left
+Process 9 is executing C: 30 RC: 25 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 24 cycles left
+******Clock: 45******
+Process 2 is executing C: 40 RC: 3 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 2 cycles left
+Process 4 is executing C: 40 RC: 9 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 8 cycles left
+Process 5 is executing C: 40 RC: 12 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 11 cycles left
+Process 6 is executing C: 30 RC: 17 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 16 cycles left
+Process 8 is executing C: 30 RC: 21 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 20 cycles left
+Process 9 is executing C: 30 RC: 24 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 23 cycles left
+******Clock: 46******
+Process 2 is executing C: 40 RC: 2 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION - 1 cycles left
+Process 4 is executing C: 40 RC: 8 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 7 cycles left
+Process 5 is executing C: 40 RC: 11 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 10 cycles left
+Process 6 is executing C: 30 RC: 16 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 15 cycles left
+Process 8 is executing C: 30 RC: 20 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 19 cycles left
+Process 9 is executing C: 30 RC: 23 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 22 cycles left
+******Clock: 47******
+Process 2 is executing C: 40 RC: 1 T: MEMORY F: false STORE,150,42
+The data 42 is stored in: 350
+MEMORY OPERATION EXECUTION DONE
+Process 4 is executing C: 40 RC: 7 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 6 cycles left
+Process 5 is executing C: 40 RC: 10 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 9 cycles left
+Process 6 is executing C: 30 RC: 15 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 14 cycles left
+Process 8 is executing C: 30 RC: 19 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 18 cycles left
+Process 9 is executing C: 30 RC: 22 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 21 cycles left
+******Clock: 48******
+Executing CPU instruction
+Process 4 is executing C: 40 RC: 6 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 5 cycles left
+Process 5 is executing C: 40 RC: 9 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 8 cycles left
+Process 6 is executing C: 30 RC: 14 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 13 cycles left
+Process 8 is executing C: 30 RC: 18 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 17 cycles left
+Process 9 is executing C: 30 RC: 21 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 20 cycles left
+******Clock: 49******
+Executing CPU instruction
+Process 4 is executing C: 40 RC: 5 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 4 cycles left
+Process 5 is executing C: 40 RC: 8 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 7 cycles left
+Process 6 is executing C: 30 RC: 13 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 12 cycles left
+Process 8 is executing C: 30 RC: 17 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 16 cycles left
+Process 9 is executing C: 30 RC: 20 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 19 cycles left
+******Clock: 50******
+Process Terminated: 2 200
+Free Memory Slots (3): 
+Base: 0 Size: 400
+Base: 460 Size: 240
+Base: 1808 Size: 240
+
+---Fragmentation---
+Total free memory: 880 bytes | Largest hole: 400 bytes | Holes: 3
+External fragmentation: 54.55% (1 - largest hole / total free memory)
+50% rule: 3 holes for N = 5 allocated blocks -> holes/N = 0.60 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Process 4 is executing C: 40 RC: 4 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 3 cycles left
+Process 5 is executing C: 40 RC: 7 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 6 cycles left
+Process 6 is executing C: 30 RC: 12 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 11 cycles left
+Process 8 is executing C: 30 RC: 16 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 15 cycles left
+Process 9 is executing C: 30 RC: 19 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 18 cycles left
+******Clock: 51******
+Process 4 is executing C: 40 RC: 3 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 2 cycles left
+Process 5 is executing C: 40 RC: 6 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 5 cycles left
+Process 6 is executing C: 30 RC: 11 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 10 cycles left
+Process 8 is executing C: 30 RC: 15 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 14 cycles left
+Process 9 is executing C: 30 RC: 18 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 17 cycles left
+******Clock: 52******
+Process 4 is executing C: 40 RC: 2 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION - 1 cycles left
+Process 5 is executing C: 40 RC: 5 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 4 cycles left
+Process 6 is executing C: 30 RC: 10 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 9 cycles left
+Process 8 is executing C: 30 RC: 14 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 13 cycles left
+Process 9 is executing C: 30 RC: 17 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 16 cycles left
+******Clock: 53******
+Process 4 is executing C: 40 RC: 1 T: MEMORY F: false STORE,200,44
+The data 44 is stored in: 900
+MEMORY OPERATION EXECUTION DONE
+Process 5 is executing C: 40 RC: 4 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 3 cycles left
+Process 6 is executing C: 30 RC: 9 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 8 cycles left
+Process 8 is executing C: 30 RC: 13 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 12 cycles left
+Process 9 is executing C: 30 RC: 16 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 15 cycles left
+******Clock: 54******
+Executing CPU instruction
+Process 5 is executing C: 40 RC: 3 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 2 cycles left
+Process 6 is executing C: 30 RC: 8 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 7 cycles left
+Process 8 is executing C: 30 RC: 12 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 11 cycles left
+Process 9 is executing C: 30 RC: 15 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 14 cycles left
+******Clock: 55******
+Executing CPU instruction
+Process 5 is executing C: 40 RC: 2 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION - 1 cycles left
+Process 6 is executing C: 30 RC: 7 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 6 cycles left
+Process 8 is executing C: 30 RC: 11 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 10 cycles left
+Process 9 is executing C: 30 RC: 14 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 13 cycles left
+******Clock: 56******
+Process Terminated: 4 300
+Free Memory Slots (3): 
+Base: 0 Size: 400
+Base: 460 Size: 540
+Base: 1808 Size: 240
+
+---Fragmentation---
+Total free memory: 1180 bytes | Largest hole: 540 bytes | Holes: 3
+External fragmentation: 54.24% (1 - largest hole / total free memory)
+50% rule: 3 holes for N = 4 allocated blocks -> holes/N = 0.75 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Process 5 is executing C: 40 RC: 1 T: MEMORY F: false STORE,400,45
+The data 45 is stored in: 1400
+MEMORY OPERATION EXECUTION DONE
+Process 6 is executing C: 30 RC: 6 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 5 cycles left
+Process 8 is executing C: 30 RC: 10 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 9 cycles left
+Process 9 is executing C: 30 RC: 13 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 12 cycles left
+******Clock: 57******
+Executing CPU instruction
+Process 6 is executing C: 30 RC: 5 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 4 cycles left
+Process 8 is executing C: 30 RC: 9 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 8 cycles left
+Process 9 is executing C: 30 RC: 12 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 11 cycles left
+******Clock: 58******
+Executing CPU instruction
+Process 6 is executing C: 30 RC: 4 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 3 cycles left
+Process 8 is executing C: 30 RC: 8 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 7 cycles left
+Process 9 is executing C: 30 RC: 11 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 10 cycles left
+******Clock: 59******
+Process Terminated: 5 448
+Free Memory Slots (3): 
+Base: 0 Size: 400
+Base: 460 Size: 988
+Base: 1808 Size: 240
+
+---Fragmentation---
+Total free memory: 1628 bytes | Largest hole: 988 bytes | Holes: 3
+External fragmentation: 39.31% (1 - largest hole / total free memory)
+50% rule: 3 holes for N = 3 allocated blocks -> holes/N = 1.00 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Process 6 is executing C: 30 RC: 3 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 2 cycles left
+Process 8 is executing C: 30 RC: 7 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 6 cycles left
+Process 9 is executing C: 30 RC: 10 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 9 cycles left
+******Clock: 60******
+Process 7 admitted after waiting 28 cycles for memory
+Process Created: 7
+PID: 7 Size: 550 t_init: 32 t_finished: -1
+PMM:
+MemSlot: Base: 460 Size: 550 vSlot: Base: 1868 Size: 550 Valid:true Dirty: false
+PIL:
+Current instruction: 0
+Instruction list: C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 30 RC: 30 T: MEMORY F: false STORE,500,47
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: CPU F: false
+C: 1 RC: 1 T: END F: false
+
+Free Memory Slots (3): 
+Base: 0 Size: 400
+Base: 1010 Size: 438
+Base: 1808 Size: 240
+
+---Fragmentation---
+Total free memory: 1078 bytes | Largest hole: 438 bytes | Holes: 3
+External fragmentation: 59.37% (1 - largest hole / total free memory)
+50% rule: 3 holes for N = 4 allocated blocks -> holes/N = 0.75 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Executing CPU instruction
+Process 6 is executing C: 30 RC: 2 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION - 1 cycles left
+Process 8 is executing C: 30 RC: 6 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 5 cycles left
+Process 9 is executing C: 30 RC: 9 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 8 cycles left
+******Clock: 61******
+Executing CPU instruction
+Process 6 is executing C: 30 RC: 1 T: MEMORY F: false STORE,60,46
+The data 46 is stored in: 1508
+MEMORY OPERATION EXECUTION DONE
+Process 8 is executing C: 30 RC: 5 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 4 cycles left
+Process 9 is executing C: 30 RC: 8 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 7 cycles left
+******Clock: 62******
+Executing Memory instruction
+Process 8 is executing C: 30 RC: 4 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 3 cycles left
+Process 9 is executing C: 30 RC: 7 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 6 cycles left
+******Clock: 63******
+Executing CPU instruction
+Process 8 is executing C: 30 RC: 3 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 2 cycles left
+Process 9 is executing C: 30 RC: 6 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 5 cycles left
+Process 7 is executing C: 30 RC: 29 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 28 cycles left
+******Clock: 64******
+Executing CPU instruction
+Process 8 is executing C: 30 RC: 2 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION - 1 cycles left
+Process 9 is executing C: 30 RC: 5 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 4 cycles left
+Process 7 is executing C: 30 RC: 28 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 27 cycles left
+******Clock: 65******
+Process Terminated: 6 80
+Free Memory Slots (3): 
+Base: 0 Size: 400
+Base: 1010 Size: 518
+Base: 1808 Size: 240
+
+---Fragmentation---
+Total free memory: 1158 bytes | Largest hole: 518 bytes | Holes: 3
+External fragmentation: 55.27% (1 - largest hole / total free memory)
+50% rule: 3 holes for N = 3 allocated blocks -> holes/N = 1.00 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Process 8 is executing C: 30 RC: 1 T: MEMORY F: false STORE,200,48
+The data 48 is stored in: 1728
+MEMORY OPERATION EXECUTION DONE
+Process 9 is executing C: 30 RC: 4 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 3 cycles left
+Process 7 is executing C: 30 RC: 27 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 26 cycles left
+******Clock: 66******
+Executing CPU instruction
+Process 9 is executing C: 30 RC: 3 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 2 cycles left
+Process 7 is executing C: 30 RC: 26 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 25 cycles left
+******Clock: 67******
+Executing CPU instruction
+Process 9 is executing C: 30 RC: 2 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION - 1 cycles left
+Process 7 is executing C: 30 RC: 25 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 24 cycles left
+******Clock: 68******
+Process Terminated: 8 280
+Free Memory Slots (2): 
+Base: 0 Size: 400
+Base: 1010 Size: 1038
+
+---Fragmentation---
+Total free memory: 1438 bytes | Largest hole: 1038 bytes | Holes: 2
+External fragmentation: 27.82% (1 - largest hole / total free memory)
+50% rule: 2 holes for N = 2 allocated blocks -> holes/N = 1.00 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Process 9 is executing C: 30 RC: 1 T: MEMORY F: false STORE,40,49
+The data 49 is stored in: 440
+MEMORY OPERATION EXECUTION DONE
+Process 7 is executing C: 30 RC: 24 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 23 cycles left
+******Clock: 69******
+Executing CPU instruction
+Process 7 is executing C: 30 RC: 23 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 22 cycles left
+******Clock: 70******
+Executing CPU instruction
+Process 7 is executing C: 30 RC: 22 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 21 cycles left
+******Clock: 71******
+Process Terminated: 9 60
+Free Memory Slots (2): 
+Base: 0 Size: 460
+Base: 1010 Size: 1038
+
+---Fragmentation---
+Total free memory: 1498 bytes | Largest hole: 1038 bytes | Holes: 2
+External fragmentation: 30.71% (1 - largest hole / total free memory)
+50% rule: 2 holes for N = 1 allocated blocks -> holes/N = 2.00 (expected ~0.5)
+Internal fragmentation: 0 bytes
+Process 7 is executing C: 30 RC: 21 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 20 cycles left
+******Clock: 72******
+Process 7 is executing C: 30 RC: 20 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 19 cycles left
+******Clock: 73******
+Process 7 is executing C: 30 RC: 19 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 18 cycles left
+******Clock: 74******
+Process 7 is executing C: 30 RC: 18 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 17 cycles left
+******Clock: 75******
+Process 7 is executing C: 30 RC: 17 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 16 cycles left
+******Clock: 76******
+Process 7 is executing C: 30 RC: 16 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 15 cycles left
+******Clock: 77******
+Process 7 is executing C: 30 RC: 15 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 14 cycles left
+******Clock: 78******
+Process 7 is executing C: 30 RC: 14 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 13 cycles left
+******Clock: 79******
+Process 7 is executing C: 30 RC: 13 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 12 cycles left
+******Clock: 80******
+Process 7 is executing C: 30 RC: 12 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 11 cycles left
+******Clock: 81******
+Process 7 is executing C: 30 RC: 11 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 10 cycles left
+******Clock: 82******
+Process 7 is executing C: 30 RC: 10 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 9 cycles left
+******Clock: 83******
+Process 7 is executing C: 30 RC: 9 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 8 cycles left
+******Clock: 84******
+Process 7 is executing C: 30 RC: 8 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 7 cycles left
+******Clock: 85******
+Process 7 is executing C: 30 RC: 7 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 6 cycles left
+******Clock: 86******
+Process 7 is executing C: 30 RC: 6 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 5 cycles left
+******Clock: 87******
+Process 7 is executing C: 30 RC: 5 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 4 cycles left
+******Clock: 88******
+Process 7 is executing C: 30 RC: 4 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 3 cycles left
+******Clock: 89******
+Process 7 is executing C: 30 RC: 3 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 2 cycles left
+******Clock: 90******
+Process 7 is executing C: 30 RC: 2 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION - 1 cycles left
+******Clock: 91******
+Process 7 is executing C: 30 RC: 1 T: MEMORY F: false STORE,500,47
+The data 47 is stored in: 960
+MEMORY OPERATION EXECUTION DONE
+******Clock: 92******
+Executing CPU instruction
+******Clock: 93******
+Executing CPU instruction
+******Clock: 94******
+Process Terminated: 7 550
+Free Memory Slots (1): 
+Base: 0 Size: 2048
+
+---Fragmentation---
+Total free memory: 2048 bytes | Largest hole: 2048 bytes | Holes: 1
+External fragmentation: 0.00% (1 - largest hole / total free memory)
+50% rule: no allocated blocks
+Internal fragmentation: 0 bytes
+******SIMULATION FINISHES******
+******Process Execution******
+0 0 0 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 1 1 1 3 3 3 -1 -1 -1 -1 -1 -1 6 6 6 -1 8 8 8 9 9 9 -1 -1 0 0 0 -1 -1 -1 2 2 2 -1 -1 -1 4 4 4 5 5 5 7 7 7 6 6 6 8 8 8 9 9 9 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 7 7 7 
+******Performance Indicators******
+Total execution cycles: 95
+CPU Utilization: 0.631578947368421
+Throughput: 0.10526315789473684
+Average Turnaround Time: 41.3
+Average Waiting Time: 7.9
+Average Context Switches: 2.6
+Average Response Time: 5.9
+Process list:
+PID: 0 Size: 100 t_init: 0 t_finished: 45
+PMM:
+MemSlot: Base: 0 Size: 100 vSlot: Base: 0 Size: 100 Valid:false Dirty: true
+PIL:
+Current instruction: 6
+Instruction list: C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 40 RC: 0 T: MEMORY F: true STORE,50,40
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: END F: true
+
+PID: 1 Size: 100 t_init: 1 t_finished: 21
+PMM:
+MemSlot: Base: 100 Size: 100 vSlot: Base: 100 Size: 100 Valid:false Dirty: true
+PIL:
+Current instruction: 6
+Instruction list: C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 2 RC: 0 T: MEMORY F: true STORE,20,41
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: END F: true
+
+PID: 2 Size: 200 t_init: 2 t_finished: 51
+PMM:
+MemSlot: Base: 200 Size: 200 vSlot: Base: 200 Size: 200 Valid:false Dirty: true
+PIL:
+Current instruction: 6
+Instruction list: C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 40 RC: 0 T: MEMORY F: true STORE,150,42
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: END F: true
+
+PID: 3 Size: 300 t_init: 3 t_finished: 24
+PMM:
+MemSlot: Base: 400 Size: 300 vSlot: Base: 400 Size: 300 Valid:false Dirty: true
+PIL:
+Current instruction: 6
+Instruction list: C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 2 RC: 0 T: MEMORY F: true STORE,250,43
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: END F: true
+
+PID: 4 Size: 300 t_init: 4 t_finished: 57
+PMM:
+MemSlot: Base: 700 Size: 300 vSlot: Base: 700 Size: 300 Valid:false Dirty: true
+PIL:
+Current instruction: 6
+Instruction list: C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 40 RC: 0 T: MEMORY F: true STORE,200,44
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: END F: true
+
+PID: 5 Size: 448 t_init: 5 t_finished: 60
+PMM:
+MemSlot: Base: 1000 Size: 448 vSlot: Base: 1000 Size: 448 Valid:false Dirty: true
+PIL:
+Current instruction: 6
+Instruction list: C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 40 RC: 0 T: MEMORY F: true STORE,400,45
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: END F: true
+
+PID: 6 Size: 80 t_init: 30 t_finished: 66
+PMM:
+MemSlot: Base: 1448 Size: 80 vSlot: Base: 1448 Size: 80 Valid:false Dirty: true
+PIL:
+Current instruction: 6
+Instruction list: C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 30 RC: 0 T: MEMORY F: true STORE,60,46
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: END F: true
+
+PID: 7 Size: 550 t_init: 32 t_finished: 95
+PMM:
+MemSlot: Base: 460 Size: 550 vSlot: Base: 1868 Size: 550 Valid:false Dirty: true
+PIL:
+Current instruction: 6
+Instruction list: C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 30 RC: 0 T: MEMORY F: true STORE,500,47
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: END F: true
+
+PID: 8 Size: 280 t_init: 34 t_finished: 69
+PMM:
+MemSlot: Base: 1528 Size: 280 vSlot: Base: 1528 Size: 280 Valid:false Dirty: true
+PIL:
+Current instruction: 6
+Instruction list: C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 30 RC: 0 T: MEMORY F: true STORE,200,48
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: END F: true
+
+PID: 9 Size: 60 t_init: 36 t_finished: 72
+PMM:
+MemSlot: Base: 400 Size: 60 vSlot: Base: 1808 Size: 60 Valid:false Dirty: true
+PIL:
+Current instruction: 6
+Instruction list: C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 30 RC: 0 T: MEMORY F: true STORE,40,49
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: CPU F: true
+C: 1 RC: 0 T: END F: true
+
+
+50 - 40
+
+120 - 41
+
+350 - 42
+
+440 - 49
+
+650 - 43
+
+900 - 44
+
+960 - 47
+
+1400 - 45
+
+1508 - 46
+
+1728 - 48
+
+Free Memory Slots (1): 
+Base: 0 Size: 2048
+
+---Fragmentation---
+Total free memory: 2048 bytes | Largest hole: 2048 bytes | Holes: 1
+External fragmentation: 0.00% (1 - largest hole / total free memory)
+50% rule: no allocated blocks
+Internal fragmentation: 0 bytes
+******Fragmentation Indicators******
+Free Memory Slot Manager: WORST_FIT
+Requests rejected by external fragmentation: 1
+Peak external fragmentation: 64.71%

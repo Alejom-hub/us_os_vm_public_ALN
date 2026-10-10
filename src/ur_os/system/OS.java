@@ -53,11 +53,12 @@ public class OS {
     FreeMemoryManager fvmm;
     Random r;
     boolean lazySwap;
-    
+    int externalFragmentationRejections; //Requests rejected because the free memory was not contiguous
+
     public static final int MAX_PROCESS_PRIORITY = 10; //Page size in bytes
     public static final int PAGE_SIZE = 64; //Page size in bytes
     public static final MemoryManagerType SMM = MemoryManagerType.CONTIGUOUS;
-    public static final FreeMemorySlotManagerType MSM = FreeMemorySlotManagerType.MEDIAN_FIT;
+    public static final FreeMemorySlotManagerType MSM = FreeMemorySlotManagerType.BEST_FIT;
     
     public static final ProcessVirtualMemoryManagerType PVMM = ProcessVirtualMemoryManagerType.LRU;
     public static final int FRAMES_PER_PROCESS = 3; //Maximum number of frames assigned to a process, if virtual memory is on
@@ -267,7 +268,11 @@ public class OS {
     
     public void create_process(ur_os.process.Process p){
         if(p != null){
-            p.setPid(process_count++);
+            //Keep the pid given in the scenario: a process that waited for memory may be created after later ones
+            if(p.getPid() < 0){
+                p.setPid(process_count);
+            }
+            process_count++;
         }else{
             p = new Process(process_count++, system.getTime());
         }
@@ -346,7 +351,48 @@ public class OS {
     
     public MemorySlot getMemorySlot(int size){
         FreeMemorySlotManager msm = (FreeMemorySlotManager)fmm;
-        return msm.getSlot(size);
+        MemorySlot m = msm.getSlot(size);
+        if(m == null){
+            reportAllocationFailure(size);
+        }
+        return m;
+    }
+
+    /*
+    Admission control for contiguous allocation (without virtual memory): the
+    process can only be created if one hole can contain it. Otherwise it waits
+    (in SystemOS) until some process finishes and returns its memory.
+    The report flag avoids repeating the message every cycle while it waits.
+    */
+    public boolean canAllocate(int size, boolean report){
+        if(SMM != MemoryManagerType.CONTIGUOUS || VIRTUAL_MEMORY_MODE_ON){
+            return true;
+        }
+        FreeMemorySlotManager msm = (FreeMemorySlotManager)fmm;
+        if(msm.getLargestFreeSlot() >= size){
+            return true;
+        }
+        if(report){
+            reportAllocationFailure(size);
+        }
+        return false;
+    }
+
+    private void reportAllocationFailure(int size){
+        FreeMemorySlotManager msm = (FreeMemorySlotManager)fmm;
+        if(msm.isExternalFragmentationFor(size)){
+            //There is enough memory in total, but it is not contiguous
+            externalFragmentationRejections++;
+            System.out.println("EXTERNAL FRAGMENTATION - Request of "+size+" bytes rejected: there are "
+                    +msm.getTotalFreeMemory()+" free bytes, but the largest hole is "+msm.getLargestFreeSlot()+" bytes");
+        }else{
+            System.out.println("NOT ENOUGH MEMORY - Request of "+size+" bytes rejected: there are only "
+                    +msm.getTotalFreeMemory()+" free bytes");
+        }
+    }
+
+    public int getExternalFragmentationRejections(){
+        return externalFragmentationRejections;
     }
     
     public MemorySlot getVMemorySlot(int size){

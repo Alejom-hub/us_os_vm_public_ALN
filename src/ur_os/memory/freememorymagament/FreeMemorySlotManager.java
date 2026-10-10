@@ -55,28 +55,71 @@ public abstract class FreeMemorySlotManager extends FreeMemoryManager{
     }
     
     private void returnMemorySlot(MemorySlot m){
-        
-        
+
+        //A process that never got memory has nothing to return
+        if(m == null){
+            return;
+        }
+
         int i = 0;
-        //Find the slot with a higher base address than the one inserted
+        //Find the first slot with a higher base address than the one inserted
         while(i<list.size() && list.get(i).getBase() < m.getBase()){
             i++;
         }
-        
-        if(i > 0){
-            i--;
-        }
-        
-        if(i == 0 && list.get(i).getBase() > m.getBase()){//If the slot is the highest one
-            list.addFirst(m);
-        }else if (i == list.size()-1){//If the slot is the first
-            list.getLast().addSlot(m);
-        }else{
-            list.add(i+1, m);
-        }
-        
+
+        /*The returned slot is inserted in order (by base address), as a copy,
+          so the process' slot is not modified. fuseSlots() only joins it with
+          its neighbors if they are really contiguous; otherwise it stays as a
+          separate hole (that is the external fragmentation).
+        */
+        list.add(i, new MemorySlot(m));
+
         fuseSlots();
-        
+
+    }
+
+    /*
+    ******Fragmentation calculation*********
+    */
+
+    //Total free memory: the sum of the sizes of all the holes
+    public int getTotalFreeMemory(){
+        int total = 0;
+        for (MemorySlot memorySlot : list) {
+            total += memorySlot.getSize();
+        }
+        return total;
+    }
+
+    //Size of the biggest hole: the largest request that can be satisfied right now
+    public int getLargestFreeSlot(){
+        int largest = 0;
+        for (MemorySlot memorySlot : list) {
+            if(memorySlot.getSize() > largest){
+                largest = memorySlot.getSize();
+            }
+        }
+        return largest;
+    }
+
+    /*External fragmentation: fraction of the free memory that is NOT in the
+      largest hole, so it cannot be used for a request of that size.
+        - 0.0 -> all the free memory is in one contiguous block
+        - close to 1.0 -> the free memory is split in many small holes
+    */
+    public double getExternalFragmentation(){
+        int total = getTotalFreeMemory();
+        if(total == 0){
+            return 0;
+        }
+        return 1 - (double)getLargestFreeSlot()/total;
+    }
+
+    /*External fragmentation as the professor defines it: there is enough
+      total free memory to satisfy the request, but it is not contiguous.
+    */
+    public boolean isExternalFragmentationFor(int request){
+        return getLargestFreeSlot() < request && getTotalFreeMemory() >= request;
     }
 
     @Override
