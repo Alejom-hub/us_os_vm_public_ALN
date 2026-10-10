@@ -65,7 +65,8 @@ public class SystemOS implements Runnable{
         //initSimulationQueueSimple();
         //initSimulationQueueSimpler();
         //initSimulationQueueBestWorstFit();
-        initSimulationQueueClassExample();
+        //initSimulationQueueClassExample();
+        initSimulationQueueMedianFit();
         
 
         showProcesses();
@@ -343,6 +344,99 @@ public class SystemOS implements Runnable{
         temp = new MemoryInstruction(MemoryOperationType.STORE, 10, (byte)26, 5);
         p.addInstruction(temp);
         p.addCPUInstructions(1);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        clock = 0;
+    }
+    
+    /*
+    Scenario for the MedianFit lab (MEMORY_SIZE = 2048 bytes).
+    P1 and P3 leave early, so when P6 arrives there are 3 holes of very
+    different sizes (100, 300 and 600). BestFit, WorstFit and MedianFit
+    choose a different hole for P6 and P7.
+    */
+    public void initSimulationQueueMedianFit(){
+        Process p;
+        Instruction temp;
+        
+        //Process 0 - Size 100 - Long lived
+        p = new Process(0,0);
+        p.setSize(100);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 50, (byte)30, 40);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 1 - Size 100 - Short lived (opens a 100 byte hole at 100)
+        p = new Process(1,1);
+        p.setSize(100);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 20, (byte)31, 2);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 2 - Size 200 - Long lived
+        p = new Process(2,2);
+        p.setSize(200);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 150, (byte)32, 40);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 3 - Size 300 - Short lived (opens a 300 byte hole at 400)
+        p = new Process(3,3);
+        p.setSize(300);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 250, (byte)33, 2);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 4 - Size 300 - Long lived
+        p = new Process(4,4);
+        p.setSize(300);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 200, (byte)34, 40);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 5 - Size 448 - Long lived (leaves a 600 byte hole at 1448)
+        p = new Process(5,5);
+        p.setSize(448);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 400, (byte)35, 40);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 6 - Size 80 - Arrives with holes of 100, 300 and 600
+        p = new Process(6,30);
+        p.setSize(80);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 60, (byte)36, 3);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
+        p.addInstruction(new EndInstruction());
+        processes.add(p);
+        
+        //Process 7 - Size 40 - Arrives after P6 is placed
+        p = new Process(7,33);
+        p.setSize(40);
+        p.addCPUInstructions(2);
+        temp = new MemoryInstruction(MemoryOperationType.STORE, 30, (byte)37, 3);
+        p.addInstruction(temp);
+        p.addCPUInstructions(2);
         p.addInstruction(new EndInstruction());
         processes.add(p);
         
