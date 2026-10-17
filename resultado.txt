@@ -90,114 +90,10 @@ Buildfile: /workspaces/us_os_vm_public_ALN/build.xml
 
 init:
 
--deps-clean-init:
-
-deps-clean:
-
--warn-already-built-clean:
-[propertyfile] Updating property file: /workspaces/us_os_vm_public_ALN/build/built-clean.properties
-
--do-clean:
-   [delete] Deleting directory /workspaces/us_os_vm_public_ALN/build
-
--post-clean:
-
-clean:
-
--pre-init:
-
--init-private:
-
--init-user:
-
--init-project:
-
--init-macrodef-property:
-
--init-modules-supported:
-
--do-init:
-
--post-init:
-
--init-check:
-
--init-ap-cmdline-properties:
-
--init-macrodef-modulename:
-
--init-source-module-properties:
-
--init-macrodef-javac-with-module:
-
--init-macrodef-javac-with-processors:
-
--init-macrodef-javac-without-processors:
-
--init-macrodef-javac:
-
--init-macrodef-test-impl:
-
--init-macrodef-junit-init:
-
--init-test-properties:
-
--init-macrodef-junit-prototype-with-module:
-
--init-macrodef-junit-prototype-without-module:
-
--init-macrodef-junit-single:
-
--init-macrodef-junit-batch:
-
--init-macrodef-junit:
-
--init-macrodef-junit-impl:
-
--init-macrodef-testng:
-
--init-macrodef-testng-impl:
-
--init-macrodef-test:
-
--init-macrodef-junit-debug-impl:
-
--init-macrodef-test-debug-junit:
-
--init-macrodef-testng-debug:
-
--init-macrodef-testng-debug-impl:
-
--init-macrodef-test-debug-testng:
-
--init-macrodef-test-debug:
-
--init-debug-args:
-
--init-macrodef-nbjpda:
-
--init-macrodef-debug:
-
--init-macrodef-java-with-module:
-
--init-macrodef-java-with-unnamed-module:
-
--init-macrodef-java-without-module:
-
--init-macrodef-java:
-
--init-presetdef-jar:
-
--init-ap-cmdline-supported:
-
--init-ap-cmdline:
-
-init:
-
 -deps-jar-init:
+   [delete] Deleting: /workspaces/us_os_vm_public_ALN/build/built-jar.properties
 
 deps-jar:
-    [mkdir] Created dir: /workspaces/us_os_vm_public_ALN/build
 
 -warn-already-built-jar:
 [propertyfile] Updating property file: /workspaces/us_os_vm_public_ALN/build/built-jar.properties
@@ -209,7 +105,6 @@ deps-jar:
 -verify-automatic-build:
 
 -pre-pre-compile:
-    [mkdir] Created dir: /workspaces/us_os_vm_public_ALN/build/classes
 
 -pre-compile:
 
@@ -218,15 +113,6 @@ deps-jar:
 -compile-depend:
 
 -do-compile:
-    [mkdir] Created dir: /workspaces/us_os_vm_public_ALN/build/empty
-    [mkdir] Created dir: /workspaces/us_os_vm_public_ALN/build/generated-sources/ap-source-output
-    [javac] Compiling 61 source files to /workspaces/us_os_vm_public_ALN/build/classes
-    [javac] warning: [options] location of system modules is not set in conjunction with -source 17
-    [javac]   not setting the location of system modules may lead to class files that cannot run on JDK 17
-    [javac]     --release 17 is recommended instead of -source 17 -target 17 because it sets the location of system modules automatically
-    [javac] Note: Some input files use unchecked or unsafe operations.
-    [javac] Note: Recompile with -Xlint:unchecked for details.
-    [javac] 1 warning
 
 -post-compile:
 
@@ -236,7 +122,6 @@ run:
      [java] ************************************
      [java]          UR_OS V.0.0.5.4
      [java] ************************************
-     [java] Free Memory Slot Manager: WORST_FIT (WorstFitMemorySlotManager)
      [java] Process list:
      [java] PID: 0 Size: 0 t_init: 0 t_finished: -1
      [java] PMM:
@@ -364,11 +249,8 @@ run:
      [java] Process Created: 0
      [java] PID: 0 Size: 100 t_init: 0 t_finished: -1
      [java] PMM:
-     [java] Segment: 0 Base: 0 Limit: 4 Dirty: false
-     [java] Segment: 1 Base: 4 Limit: 29 Dirty: false
-     [java] Segment: 2 Base: 33 Limit: 24 Dirty: false
-     [java] Segment: 3 Base: 57 Limit: 33 Dirty: false
-     [java] Segment: 4 Base: 90 Limit: 10 Dirty: false
+     [java] Page: 0 Frame: 0 Valid: true Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 0
@@ -379,24 +261,16 @@ run:
      [java] C: 1 RC: 1 T: CPU F: false
      [java] C: 1 RC: 1 T: END F: false
      [java] 
-     [java] Free Memory Slots (1): 
-     [java] Base: 100 Size: 1948
-     [java] 
+     [java] Free frame number: 31
      [java] ---Fragmentation---
-     [java] Total free memory: 1948 bytes | Largest hole: 1948 bytes | Holes: 1
-     [java] External fragmentation: 0.00% (1 - largest hole / total free memory)
-     [java] 50% rule: 1 holes for N = 5 allocated blocks -> holes/N = 0.20 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 28 bytes
      [java] Executing CPU instruction
      [java] ******Clock: 1******
      [java] Process Created: 1
      [java] PID: 1 Size: 100 t_init: 1 t_finished: -1
      [java] PMM:
-     [java] Segment: 0 Base: 100 Limit: 4 Dirty: false
-     [java] Segment: 1 Base: 104 Limit: 29 Dirty: false
-     [java] Segment: 2 Base: 133 Limit: 24 Dirty: false
-     [java] Segment: 3 Base: 157 Limit: 33 Dirty: false
-     [java] Segment: 4 Base: 190 Limit: 10 Dirty: false
+     [java] Page: 0 Frame: 1 Valid: true Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 0
@@ -407,24 +281,18 @@ run:
      [java] C: 1 RC: 1 T: CPU F: false
      [java] C: 1 RC: 1 T: END F: false
      [java] 
-     [java] Free Memory Slots (1): 
-     [java] Base: 200 Size: 1848
-     [java] 
+     [java] Free frame number: 30
      [java] ---Fragmentation---
-     [java] Total free memory: 1848 bytes | Largest hole: 1848 bytes | Holes: 1
-     [java] External fragmentation: 0.00% (1 - largest hole / total free memory)
-     [java] 50% rule: 1 holes for N = 10 allocated blocks -> holes/N = 0.10 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 56 bytes
      [java] Executing CPU instruction
      [java] ******Clock: 2******
      [java] Process Created: 2
      [java] PID: 2 Size: 200 t_init: 2 t_finished: -1
      [java] PMM:
-     [java] Segment: 0 Base: 200 Limit: 9 Dirty: false
-     [java] Segment: 1 Base: 209 Limit: 57 Dirty: false
-     [java] Segment: 2 Base: 266 Limit: 49 Dirty: false
-     [java] Segment: 3 Base: 315 Limit: 66 Dirty: false
-     [java] Segment: 4 Base: 381 Limit: 19 Dirty: false
+     [java] Page: 0 Frame: 2 Valid: true Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 2 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 3 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 0
@@ -435,24 +303,19 @@ run:
      [java] C: 1 RC: 1 T: CPU F: false
      [java] C: 1 RC: 1 T: END F: false
      [java] 
-     [java] Free Memory Slots (1): 
-     [java] Base: 400 Size: 1648
-     [java] 
+     [java] Free frame number: 29
      [java] ---Fragmentation---
-     [java] Total free memory: 1648 bytes | Largest hole: 1648 bytes | Holes: 1
-     [java] External fragmentation: 0.00% (1 - largest hole / total free memory)
-     [java] 50% rule: 1 holes for N = 15 allocated blocks -> holes/N = 0.07 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 112 bytes
      [java] Executing Memory instruction
      [java] ******Clock: 3******
      [java] Process Created: 3
      [java] PID: 3 Size: 300 t_init: 3 t_finished: -1
      [java] PMM:
-     [java] Segment: 0 Base: 400 Limit: 13 Dirty: false
-     [java] Segment: 1 Base: 413 Limit: 86 Dirty: false
-     [java] Segment: 2 Base: 499 Limit: 73 Dirty: false
-     [java] Segment: 3 Base: 572 Limit: 99 Dirty: false
-     [java] Segment: 4 Base: 671 Limit: 29 Dirty: false
+     [java] Page: 0 Frame: 3 Valid: true Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 2 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 3 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 4 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 0
@@ -463,29 +326,22 @@ run:
      [java] C: 1 RC: 1 T: CPU F: false
      [java] C: 1 RC: 1 T: END F: false
      [java] 
-     [java] Free Memory Slots (1): 
-     [java] Base: 700 Size: 1348
-     [java] 
+     [java] Free frame number: 28
      [java] ---Fragmentation---
-     [java] Total free memory: 1348 bytes | Largest hole: 1348 bytes | Holes: 1
-     [java] External fragmentation: 0.00% (1 - largest hole / total free memory)
-     [java] 50% rule: 1 holes for N = 20 allocated blocks -> holes/N = 0.05 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 132 bytes
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 39 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 38 cycles left
      [java] ******Clock: 4******
      [java] Process Created: 4
      [java] PID: 4 Size: 300 t_init: 4 t_finished: -1
      [java] PMM:
-     [java] Segment: 0 Base: 700 Limit: 13 Dirty: false
-     [java] Segment: 1 Base: 713 Limit: 86 Dirty: false
-     [java] Segment: 2 Base: 799 Limit: 73 Dirty: false
-     [java] Segment: 3 Base: 872 Limit: 99 Dirty: false
-     [java] Segment: 4 Base: 971 Limit: 29 Dirty: false
+     [java] Page: 0 Frame: 4 Valid: true Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 2 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 3 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 4 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 0
@@ -496,29 +352,24 @@ run:
      [java] C: 1 RC: 1 T: CPU F: false
      [java] C: 1 RC: 1 T: END F: false
      [java] 
-     [java] Free Memory Slots (1): 
-     [java] Base: 1000 Size: 1048
-     [java] 
+     [java] Free frame number: 27
      [java] ---Fragmentation---
-     [java] Total free memory: 1048 bytes | Largest hole: 1048 bytes | Holes: 1
-     [java] External fragmentation: 0.00% (1 - largest hole / total free memory)
-     [java] 50% rule: 1 holes for N = 25 allocated blocks -> holes/N = 0.04 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 152 bytes
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 38 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 37 cycles left
      [java] ******Clock: 5******
      [java] Process Created: 5
      [java] PID: 5 Size: 448 t_init: 5 t_finished: -1
      [java] PMM:
-     [java] Segment: 0 Base: 1000 Limit: 20 Dirty: false
-     [java] Segment: 1 Base: 1020 Limit: 129 Dirty: false
-     [java] Segment: 2 Base: 1149 Limit: 109 Dirty: false
-     [java] Segment: 3 Base: 1258 Limit: 149 Dirty: false
-     [java] Segment: 4 Base: 1407 Limit: 41 Dirty: false
+     [java] Page: 0 Frame: 5 Valid: true Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 2 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 3 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 4 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 5 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 6 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 0
@@ -529,460 +380,289 @@ run:
      [java] C: 1 RC: 1 T: CPU F: false
      [java] C: 1 RC: 1 T: END F: false
      [java] 
-     [java] Free Memory Slots (1): 
-     [java] Base: 1448 Size: 600
-     [java] 
+     [java] Free frame number: 26
      [java] ---Fragmentation---
-     [java] Total free memory: 600 bytes | Largest hole: 600 bytes | Holes: 1
-     [java] External fragmentation: 0.00% (1 - largest hole / total free memory)
-     [java] 50% rule: 1 holes for N = 30 allocated blocks -> holes/N = 0.03 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 152 bytes
      [java] Executing Memory instruction
      [java] Process 0 is executing C: 40 RC: 37 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 36 cycles left
      [java] ******Clock: 6******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 36 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 35 cycles left
      [java] Process 1 is executing C: 2 RC: 1 T: MEMORY F: false STORE,20,41
-     [java] Accessing Segment 1 and offset 16
-     [java] Segment 1 Base: 104 + Offset: 16 = Physical Address: 120
-     [java] The data 41 is stored in: 120
+     [java] The data 41 is stored in: 84
      [java] MEMORY OPERATION EXECUTION DONE
      [java] ******Clock: 7******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 35 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 34 cycles left
      [java] ******Clock: 8******
      [java] Executing Memory instruction
      [java] Process 0 is executing C: 40 RC: 34 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 33 cycles left
      [java] ******Clock: 9******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 33 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 32 cycles left
      [java] Process 2 is executing C: 40 RC: 39 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 38 cycles left
      [java] ******Clock: 10******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 32 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 31 cycles left
      [java] Process 2 is executing C: 40 RC: 38 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 37 cycles left
      [java] ******Clock: 11******
      [java] Executing Memory instruction
      [java] Process 0 is executing C: 40 RC: 31 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 30 cycles left
      [java] Process 2 is executing C: 40 RC: 37 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 36 cycles left
      [java] ******Clock: 12******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 30 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 29 cycles left
      [java] Process 2 is executing C: 40 RC: 36 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 35 cycles left
      [java] Process 3 is executing C: 2 RC: 1 T: MEMORY F: false STORE,250,43
-     [java] Accessing Segment 3 and offset 78
-     [java] Segment 3 Base: 572 + Offset: 78 = Physical Address: 650
-     [java] The data 43 is stored in: 650
+     [java] The data 43 is stored in: 506
      [java] MEMORY OPERATION EXECUTION DONE
      [java] ******Clock: 13******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 29 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 28 cycles left
      [java] Process 2 is executing C: 40 RC: 35 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 34 cycles left
      [java] ******Clock: 14******
      [java] Executing Memory instruction
      [java] Process 0 is executing C: 40 RC: 28 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 27 cycles left
      [java] Process 2 is executing C: 40 RC: 34 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 33 cycles left
      [java] ******Clock: 15******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 27 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 26 cycles left
      [java] Process 2 is executing C: 40 RC: 33 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 32 cycles left
      [java] Process 4 is executing C: 40 RC: 39 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 38 cycles left
      [java] ******Clock: 16******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 26 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 25 cycles left
      [java] Process 2 is executing C: 40 RC: 32 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 31 cycles left
      [java] Process 4 is executing C: 40 RC: 38 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 37 cycles left
      [java] ******Clock: 17******
      [java] Executing Memory instruction
      [java] Process 0 is executing C: 40 RC: 25 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 24 cycles left
      [java] Process 2 is executing C: 40 RC: 31 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 30 cycles left
      [java] Process 4 is executing C: 40 RC: 37 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 36 cycles left
      [java] ******Clock: 18******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 24 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 23 cycles left
      [java] Process 2 is executing C: 40 RC: 30 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 29 cycles left
      [java] Process 4 is executing C: 40 RC: 36 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 35 cycles left
      [java] Process 5 is executing C: 40 RC: 39 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 38 cycles left
      [java] ******Clock: 19******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 23 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 22 cycles left
      [java] Process 2 is executing C: 40 RC: 29 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 28 cycles left
      [java] Process 4 is executing C: 40 RC: 35 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 34 cycles left
      [java] Process 5 is executing C: 40 RC: 38 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 37 cycles left
      [java] ******Clock: 20******
      [java] Process Terminated: 1 100
-     [java] Free Memory Slots (2): 
-     [java] Base: 100 Size: 100
-     [java] Base: 1448 Size: 600
-     [java] 
+     [java] Free frame number: 23
      [java] ---Fragmentation---
-     [java] Total free memory: 700 bytes | Largest hole: 600 bytes | Holes: 2
-     [java] External fragmentation: 14.29% (1 - largest hole / total free memory)
-     [java] 50% rule: 2 holes for N = 25 allocated blocks -> holes/N = 0.08 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 124 bytes
      [java] Process 0 is executing C: 40 RC: 22 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 21 cycles left
      [java] Process 2 is executing C: 40 RC: 28 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 27 cycles left
      [java] Process 4 is executing C: 40 RC: 34 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 33 cycles left
      [java] Process 5 is executing C: 40 RC: 37 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 36 cycles left
      [java] ******Clock: 21******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 21 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 20 cycles left
      [java] Process 2 is executing C: 40 RC: 27 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 26 cycles left
      [java] Process 4 is executing C: 40 RC: 33 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 32 cycles left
      [java] Process 5 is executing C: 40 RC: 36 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 35 cycles left
      [java] ******Clock: 22******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 20 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 19 cycles left
      [java] Process 2 is executing C: 40 RC: 26 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 25 cycles left
      [java] Process 4 is executing C: 40 RC: 32 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 31 cycles left
      [java] Process 5 is executing C: 40 RC: 35 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 34 cycles left
      [java] ******Clock: 23******
      [java] Process Terminated: 3 300
-     [java] Free Memory Slots (3): 
-     [java] Base: 100 Size: 100
-     [java] Base: 400 Size: 300
-     [java] Base: 1448 Size: 600
-     [java] 
+     [java] Free frame number: 25
      [java] ---Fragmentation---
-     [java] Total free memory: 1000 bytes | Largest hole: 600 bytes | Holes: 3
-     [java] External fragmentation: 40.00% (1 - largest hole / total free memory)
-     [java] 50% rule: 3 holes for N = 20 allocated blocks -> holes/N = 0.15 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 104 bytes
      [java] Process 0 is executing C: 40 RC: 19 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 18 cycles left
      [java] Process 2 is executing C: 40 RC: 25 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 24 cycles left
      [java] Process 4 is executing C: 40 RC: 31 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 30 cycles left
      [java] Process 5 is executing C: 40 RC: 34 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 33 cycles left
      [java] ******Clock: 24******
      [java] Process 0 is executing C: 40 RC: 18 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 17 cycles left
      [java] Process 2 is executing C: 40 RC: 24 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 23 cycles left
      [java] Process 4 is executing C: 40 RC: 30 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 29 cycles left
      [java] Process 5 is executing C: 40 RC: 33 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 32 cycles left
      [java] ******Clock: 25******
      [java] Process 0 is executing C: 40 RC: 17 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 16 cycles left
      [java] Process 2 is executing C: 40 RC: 23 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 22 cycles left
      [java] Process 4 is executing C: 40 RC: 29 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 28 cycles left
      [java] Process 5 is executing C: 40 RC: 32 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 31 cycles left
      [java] ******Clock: 26******
      [java] Process 0 is executing C: 40 RC: 16 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 15 cycles left
      [java] Process 2 is executing C: 40 RC: 22 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 21 cycles left
      [java] Process 4 is executing C: 40 RC: 28 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 27 cycles left
      [java] Process 5 is executing C: 40 RC: 31 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 30 cycles left
      [java] ******Clock: 27******
      [java] Process 0 is executing C: 40 RC: 15 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 14 cycles left
      [java] Process 2 is executing C: 40 RC: 21 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 20 cycles left
      [java] Process 4 is executing C: 40 RC: 27 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 26 cycles left
      [java] Process 5 is executing C: 40 RC: 30 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 29 cycles left
      [java] ******Clock: 28******
      [java] Process 0 is executing C: 40 RC: 14 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 13 cycles left
      [java] Process 2 is executing C: 40 RC: 20 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 19 cycles left
      [java] Process 4 is executing C: 40 RC: 26 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 25 cycles left
      [java] Process 5 is executing C: 40 RC: 29 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 28 cycles left
      [java] ******Clock: 29******
      [java] Process 0 is executing C: 40 RC: 13 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 12 cycles left
      [java] Process 2 is executing C: 40 RC: 19 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 18 cycles left
      [java] Process 4 is executing C: 40 RC: 25 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 24 cycles left
      [java] Process 5 is executing C: 40 RC: 28 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 27 cycles left
      [java] ******Clock: 30******
      [java] Process Created: 6
      [java] PID: 6 Size: 80 t_init: 30 t_finished: -1
      [java] PMM:
-     [java] Segment: 0 Base: 1448 Limit: 4 Dirty: false
-     [java] Segment: 1 Base: 1452 Limit: 23 Dirty: false
-     [java] Segment: 2 Base: 1475 Limit: 19 Dirty: false
-     [java] Segment: 3 Base: 1494 Limit: 27 Dirty: false
-     [java] Segment: 4 Base: 1521 Limit: 7 Dirty: false
+     [java] Page: 0 Frame: 1 Valid: true Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 0
@@ -993,68 +673,49 @@ run:
      [java] C: 1 RC: 1 T: CPU F: false
      [java] C: 1 RC: 1 T: END F: false
      [java] 
-     [java] Free Memory Slots (3): 
-     [java] Base: 100 Size: 100
-     [java] Base: 400 Size: 300
-     [java] Base: 1528 Size: 520
-     [java] 
+     [java] Free frame number: 24
      [java] ---Fragmentation---
-     [java] Total free memory: 920 bytes | Largest hole: 520 bytes | Holes: 3
-     [java] External fragmentation: 43.48% (1 - largest hole / total free memory)
-     [java] 50% rule: 3 holes for N = 25 allocated blocks -> holes/N = 0.12 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 152 bytes
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 12 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 11 cycles left
      [java] Process 2 is executing C: 40 RC: 18 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 17 cycles left
      [java] Process 4 is executing C: 40 RC: 24 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 23 cycles left
      [java] Process 5 is executing C: 40 RC: 27 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 26 cycles left
      [java] ******Clock: 31******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 11 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 10 cycles left
      [java] Process 2 is executing C: 40 RC: 17 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 16 cycles left
      [java] Process 4 is executing C: 40 RC: 23 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 22 cycles left
      [java] Process 5 is executing C: 40 RC: 26 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 25 cycles left
      [java] ******Clock: 32******
      [java] Process Created: 7
      [java] PID: 7 Size: 550 t_init: 32 t_finished: -1
      [java] PMM:
-     [java] Segment: 0 Base: 1528 Limit: 24 Dirty: false
-     [java] Segment: 1 Base: 1552 Limit: 158 Dirty: false
-     [java] Segment: 2 Base: 1710 Limit: 134 Dirty: false
-     [java] Segment: 3 Base: 400 Limit: 182 Dirty: false
-     [java] Segment: 4 Base: 1844 Limit: 52 Dirty: false
+     [java] Page: 0 Frame: 3 Valid: true Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 2 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 3 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 4 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 5 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 6 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 7 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 8 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 0
@@ -1065,73 +726,48 @@ run:
      [java] C: 1 RC: 1 T: CPU F: false
      [java] C: 1 RC: 1 T: END F: false
      [java] 
-     [java] Free Memory Slots (3): 
-     [java] Base: 100 Size: 100
-     [java] Base: 582 Size: 118
-     [java] Base: 1896 Size: 152
-     [java] 
+     [java] Free frame number: 23
      [java] ---Fragmentation---
-     [java] Total free memory: 370 bytes | Largest hole: 152 bytes | Holes: 3
-     [java] External fragmentation: 58.92% (1 - largest hole / total free memory)
-     [java] 50% rule: 3 holes for N = 30 allocated blocks -> holes/N = 0.10 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 178 bytes
      [java] Executing Memory instruction
      [java] Process 0 is executing C: 40 RC: 10 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 9 cycles left
      [java] Process 2 is executing C: 40 RC: 16 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 15 cycles left
      [java] Process 4 is executing C: 40 RC: 22 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 21 cycles left
      [java] Process 5 is executing C: 40 RC: 25 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 24 cycles left
      [java] ******Clock: 33******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 9 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 8 cycles left
      [java] Process 2 is executing C: 40 RC: 15 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 14 cycles left
      [java] Process 4 is executing C: 40 RC: 21 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 20 cycles left
      [java] Process 5 is executing C: 40 RC: 24 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 23 cycles left
      [java] Process 6 is executing C: 30 RC: 29 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 28 cycles left
      [java] ******Clock: 34******
      [java] Process Created: 8
      [java] PID: 8 Size: 280 t_init: 34 t_finished: -1
      [java] PMM:
-     [java] Segment: 0 Base: 1896 Limit: 12 Dirty: false
-     [java] Segment: 1 Base: 1908 Limit: 80 Dirty: false
-     [java] Segment: 2 Base: 582 Limit: 68 Dirty: false
-     [java] Segment: 3 Base: 100 Limit: 93 Dirty: false
-     [java] Segment: 4 Base: 1988 Limit: 27 Dirty: false
+     [java] Page: 0 Frame: 7 Valid: true Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 2 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 3 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 4 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 0
@@ -1142,78 +778,47 @@ run:
      [java] C: 1 RC: 1 T: CPU F: false
      [java] C: 1 RC: 1 T: END F: false
      [java] 
-     [java] Free Memory Slots (3): 
-     [java] Base: 193 Size: 7
-     [java] Base: 650 Size: 50
-     [java] Base: 2015 Size: 33
-     [java] 
+     [java] Free frame number: 22
      [java] ---Fragmentation---
-     [java] Total free memory: 90 bytes | Largest hole: 50 bytes | Holes: 3
-     [java] External fragmentation: 44.44% (1 - largest hole / total free memory)
-     [java] 50% rule: 3 holes for N = 35 allocated blocks -> holes/N = 0.09 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 218 bytes
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 8 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 7 cycles left
      [java] Process 2 is executing C: 40 RC: 14 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 13 cycles left
      [java] Process 4 is executing C: 40 RC: 20 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 19 cycles left
      [java] Process 5 is executing C: 40 RC: 23 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 22 cycles left
      [java] Process 6 is executing C: 30 RC: 28 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 27 cycles left
      [java] ******Clock: 35******
      [java] Executing Memory instruction
      [java] Process 0 is executing C: 40 RC: 7 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 6 cycles left
      [java] Process 2 is executing C: 40 RC: 13 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 12 cycles left
      [java] Process 4 is executing C: 40 RC: 19 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 18 cycles left
      [java] Process 5 is executing C: 40 RC: 22 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 21 cycles left
      [java] Process 6 is executing C: 30 RC: 27 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 26 cycles left
      [java] ******Clock: 36******
      [java] Process Created: 9
      [java] PID: 9 Size: 60 t_init: 36 t_finished: -1
      [java] PMM:
-     [java] Segment: 0 Base: 650 Limit: 3 Dirty: false
-     [java] Segment: 1 Base: 653 Limit: 17 Dirty: false
-     [java] Segment: 2 Base: 2015 Limit: 15 Dirty: false
-     [java] Segment: 3 Base: 670 Limit: 20 Dirty: false
-     [java] Segment: 4 Base: 2030 Limit: 5 Dirty: false
+     [java] Page: 0 Frame: 10 Valid: true Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 0
@@ -1224,1002 +829,600 @@ run:
      [java] C: 1 RC: 1 T: CPU F: false
      [java] C: 1 RC: 1 T: END F: false
      [java] 
-     [java] Free Memory Slots (3): 
-     [java] Base: 193 Size: 7
-     [java] Base: 690 Size: 10
-     [java] Base: 2035 Size: 13
-     [java] 
+     [java] Free frame number: 21
      [java] ---Fragmentation---
-     [java] Total free memory: 30 bytes | Largest hole: 13 bytes | Holes: 3
-     [java] External fragmentation: 56.67% (1 - largest hole / total free memory)
-     [java] 50% rule: 3 holes for N = 40 allocated blocks -> holes/N = 0.08 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 222 bytes
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 6 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 5 cycles left
      [java] Process 2 is executing C: 40 RC: 12 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 11 cycles left
      [java] Process 4 is executing C: 40 RC: 18 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 17 cycles left
      [java] Process 5 is executing C: 40 RC: 21 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 20 cycles left
      [java] Process 6 is executing C: 30 RC: 26 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 25 cycles left
      [java] Process 7 is executing C: 30 RC: 29 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 28 cycles left
      [java] ******Clock: 37******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 5 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 4 cycles left
      [java] Process 2 is executing C: 40 RC: 11 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 10 cycles left
      [java] Process 4 is executing C: 40 RC: 17 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 16 cycles left
      [java] Process 5 is executing C: 40 RC: 20 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 19 cycles left
      [java] Process 6 is executing C: 30 RC: 25 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 24 cycles left
      [java] Process 7 is executing C: 30 RC: 28 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 27 cycles left
      [java] ******Clock: 38******
      [java] Executing Memory instruction
      [java] Process 0 is executing C: 40 RC: 4 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 3 cycles left
      [java] Process 2 is executing C: 40 RC: 10 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 9 cycles left
      [java] Process 4 is executing C: 40 RC: 16 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 15 cycles left
      [java] Process 5 is executing C: 40 RC: 19 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 18 cycles left
      [java] Process 6 is executing C: 30 RC: 24 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 23 cycles left
      [java] Process 7 is executing C: 30 RC: 27 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 26 cycles left
      [java] ******Clock: 39******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 3 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 2 cycles left
      [java] Process 2 is executing C: 40 RC: 9 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 8 cycles left
      [java] Process 4 is executing C: 40 RC: 15 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 14 cycles left
      [java] Process 5 is executing C: 40 RC: 18 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 17 cycles left
      [java] Process 6 is executing C: 30 RC: 23 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 22 cycles left
      [java] Process 7 is executing C: 30 RC: 26 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 25 cycles left
      [java] Process 8 is executing C: 30 RC: 29 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 28 cycles left
      [java] ******Clock: 40******
      [java] Executing CPU instruction
      [java] Process 0 is executing C: 40 RC: 2 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION - 1 cycles left
      [java] Process 2 is executing C: 40 RC: 8 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 7 cycles left
      [java] Process 4 is executing C: 40 RC: 14 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 13 cycles left
      [java] Process 5 is executing C: 40 RC: 17 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 16 cycles left
      [java] Process 6 is executing C: 30 RC: 22 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 21 cycles left
      [java] Process 7 is executing C: 30 RC: 25 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 24 cycles left
      [java] Process 8 is executing C: 30 RC: 28 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 27 cycles left
      [java] ******Clock: 41******
      [java] Executing Memory instruction
      [java] Process 0 is executing C: 40 RC: 1 T: MEMORY F: false STORE,50,40
-     [java] Accessing Segment 2 and offset 17
-     [java] Segment 2 Base: 33 + Offset: 17 = Physical Address: 50
      [java] The data 40 is stored in: 50
      [java] MEMORY OPERATION EXECUTION DONE
      [java] Process 2 is executing C: 40 RC: 7 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 6 cycles left
      [java] Process 4 is executing C: 40 RC: 13 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 12 cycles left
      [java] Process 5 is executing C: 40 RC: 16 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 15 cycles left
      [java] Process 6 is executing C: 30 RC: 21 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 20 cycles left
      [java] Process 7 is executing C: 30 RC: 24 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 23 cycles left
      [java] Process 8 is executing C: 30 RC: 27 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 26 cycles left
      [java] ******Clock: 42******
      [java] Executing CPU instruction
      [java] Process 2 is executing C: 40 RC: 6 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 5 cycles left
      [java] Process 4 is executing C: 40 RC: 12 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 11 cycles left
      [java] Process 5 is executing C: 40 RC: 15 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 14 cycles left
      [java] Process 6 is executing C: 30 RC: 20 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 19 cycles left
      [java] Process 7 is executing C: 30 RC: 23 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 22 cycles left
      [java] Process 8 is executing C: 30 RC: 26 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 25 cycles left
      [java] Process 9 is executing C: 30 RC: 29 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 28 cycles left
      [java] ******Clock: 43******
      [java] Executing CPU instruction
      [java] Process 2 is executing C: 40 RC: 5 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 4 cycles left
      [java] Process 4 is executing C: 40 RC: 11 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 10 cycles left
      [java] Process 5 is executing C: 40 RC: 14 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 13 cycles left
      [java] Process 6 is executing C: 30 RC: 19 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 18 cycles left
      [java] Process 7 is executing C: 30 RC: 22 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 21 cycles left
      [java] Process 8 is executing C: 30 RC: 25 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 24 cycles left
      [java] Process 9 is executing C: 30 RC: 28 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 27 cycles left
      [java] ******Clock: 44******
      [java] Process Terminated: 0 100
-     [java] Free Memory Slots (4): 
-     [java] Base: 0 Size: 100
-     [java] Base: 193 Size: 7
-     [java] Base: 690 Size: 10
-     [java] Base: 2035 Size: 13
-     [java] 
+     [java] Free frame number: 20
      [java] ---Fragmentation---
-     [java] Total free memory: 130 bytes | Largest hole: 100 bytes | Holes: 4
-     [java] External fragmentation: 23.08% (1 - largest hole / total free memory)
-     [java] 50% rule: 4 holes for N = 35 allocated blocks -> holes/N = 0.11 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 194 bytes
      [java] Process 2 is executing C: 40 RC: 4 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 3 cycles left
      [java] Process 4 is executing C: 40 RC: 10 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 9 cycles left
      [java] Process 5 is executing C: 40 RC: 13 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 12 cycles left
      [java] Process 6 is executing C: 30 RC: 18 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 17 cycles left
      [java] Process 7 is executing C: 30 RC: 21 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 20 cycles left
      [java] Process 8 is executing C: 30 RC: 24 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 23 cycles left
      [java] Process 9 is executing C: 30 RC: 27 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 26 cycles left
      [java] ******Clock: 45******
      [java] Process 2 is executing C: 40 RC: 3 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 2 cycles left
      [java] Process 4 is executing C: 40 RC: 9 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 8 cycles left
      [java] Process 5 is executing C: 40 RC: 12 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 11 cycles left
      [java] Process 6 is executing C: 30 RC: 17 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 16 cycles left
      [java] Process 7 is executing C: 30 RC: 20 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 19 cycles left
      [java] Process 8 is executing C: 30 RC: 23 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 22 cycles left
      [java] Process 9 is executing C: 30 RC: 26 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 25 cycles left
      [java] ******Clock: 46******
      [java] Process 2 is executing C: 40 RC: 2 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION - 1 cycles left
      [java] Process 4 is executing C: 40 RC: 8 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 7 cycles left
      [java] Process 5 is executing C: 40 RC: 11 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 10 cycles left
      [java] Process 6 is executing C: 30 RC: 16 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 15 cycles left
      [java] Process 7 is executing C: 30 RC: 19 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 18 cycles left
      [java] Process 8 is executing C: 30 RC: 22 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 21 cycles left
      [java] Process 9 is executing C: 30 RC: 25 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 24 cycles left
      [java] ******Clock: 47******
      [java] Process 2 is executing C: 40 RC: 1 T: MEMORY F: false STORE,150,42
-     [java] Accessing Segment 3 and offset 35
-     [java] Segment 3 Base: 315 + Offset: 35 = Physical Address: 350
-     [java] The data 42 is stored in: 350
+     [java] The data 42 is stored in: 406
      [java] MEMORY OPERATION EXECUTION DONE
      [java] Process 4 is executing C: 40 RC: 7 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 6 cycles left
      [java] Process 5 is executing C: 40 RC: 10 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 9 cycles left
      [java] Process 6 is executing C: 30 RC: 15 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 14 cycles left
      [java] Process 7 is executing C: 30 RC: 18 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 17 cycles left
      [java] Process 8 is executing C: 30 RC: 21 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 20 cycles left
      [java] Process 9 is executing C: 30 RC: 24 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 23 cycles left
      [java] ******Clock: 48******
      [java] Executing CPU instruction
      [java] Process 4 is executing C: 40 RC: 6 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 5 cycles left
      [java] Process 5 is executing C: 40 RC: 9 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 8 cycles left
      [java] Process 6 is executing C: 30 RC: 14 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 13 cycles left
      [java] Process 7 is executing C: 30 RC: 17 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 16 cycles left
      [java] Process 8 is executing C: 30 RC: 20 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 19 cycles left
      [java] Process 9 is executing C: 30 RC: 23 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 22 cycles left
      [java] ******Clock: 49******
      [java] Executing CPU instruction
      [java] Process 4 is executing C: 40 RC: 5 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 4 cycles left
      [java] Process 5 is executing C: 40 RC: 8 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 7 cycles left
      [java] Process 6 is executing C: 30 RC: 13 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 12 cycles left
      [java] Process 7 is executing C: 30 RC: 16 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 15 cycles left
      [java] Process 8 is executing C: 30 RC: 19 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 18 cycles left
      [java] Process 9 is executing C: 30 RC: 22 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 21 cycles left
      [java] ******Clock: 50******
      [java] Process Terminated: 2 200
-     [java] Free Memory Slots (4): 
-     [java] Base: 0 Size: 100
-     [java] Base: 193 Size: 207
-     [java] Base: 690 Size: 10
-     [java] Base: 2035 Size: 13
-     [java] 
+     [java] Free frame number: 22
      [java] ---Fragmentation---
-     [java] Total free memory: 330 bytes | Largest hole: 207 bytes | Holes: 4
-     [java] External fragmentation: 37.27% (1 - largest hole / total free memory)
-     [java] 50% rule: 4 holes for N = 30 allocated blocks -> holes/N = 0.13 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 138 bytes
      [java] Process 4 is executing C: 40 RC: 4 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 3 cycles left
      [java] Process 5 is executing C: 40 RC: 7 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 6 cycles left
      [java] Process 6 is executing C: 30 RC: 12 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 11 cycles left
      [java] Process 7 is executing C: 30 RC: 15 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 14 cycles left
      [java] Process 8 is executing C: 30 RC: 18 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 17 cycles left
      [java] Process 9 is executing C: 30 RC: 21 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 20 cycles left
      [java] ******Clock: 51******
      [java] Process 4 is executing C: 40 RC: 3 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 2 cycles left
      [java] Process 5 is executing C: 40 RC: 6 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 5 cycles left
      [java] Process 6 is executing C: 30 RC: 11 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 10 cycles left
      [java] Process 7 is executing C: 30 RC: 14 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 13 cycles left
      [java] Process 8 is executing C: 30 RC: 17 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 16 cycles left
      [java] Process 9 is executing C: 30 RC: 20 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 19 cycles left
      [java] ******Clock: 52******
      [java] Process 4 is executing C: 40 RC: 2 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION - 1 cycles left
      [java] Process 5 is executing C: 40 RC: 5 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 4 cycles left
      [java] Process 6 is executing C: 30 RC: 10 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 9 cycles left
      [java] Process 7 is executing C: 30 RC: 13 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 12 cycles left
      [java] Process 8 is executing C: 30 RC: 16 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 15 cycles left
      [java] Process 9 is executing C: 30 RC: 19 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 18 cycles left
      [java] ******Clock: 53******
      [java] Process 4 is executing C: 40 RC: 1 T: MEMORY F: false STORE,200,44
-     [java] Accessing Segment 3 and offset 28
-     [java] Segment 3 Base: 872 + Offset: 28 = Physical Address: 900
-     [java] The data 44 is stored in: 900
+     [java] The data 44 is stored in: 520
      [java] MEMORY OPERATION EXECUTION DONE
      [java] Process 5 is executing C: 40 RC: 4 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 3 cycles left
      [java] Process 6 is executing C: 30 RC: 9 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 8 cycles left
      [java] Process 7 is executing C: 30 RC: 12 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 11 cycles left
      [java] Process 8 is executing C: 30 RC: 15 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 14 cycles left
      [java] Process 9 is executing C: 30 RC: 18 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 17 cycles left
      [java] ******Clock: 54******
      [java] Executing CPU instruction
      [java] Process 5 is executing C: 40 RC: 3 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 2 cycles left
      [java] Process 6 is executing C: 30 RC: 8 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 7 cycles left
      [java] Process 7 is executing C: 30 RC: 11 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 10 cycles left
      [java] Process 8 is executing C: 30 RC: 14 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 13 cycles left
      [java] Process 9 is executing C: 30 RC: 17 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 16 cycles left
      [java] ******Clock: 55******
      [java] Executing CPU instruction
      [java] Process 5 is executing C: 40 RC: 2 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION - 1 cycles left
      [java] Process 6 is executing C: 30 RC: 7 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 6 cycles left
      [java] Process 7 is executing C: 30 RC: 10 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 9 cycles left
      [java] Process 8 is executing C: 30 RC: 13 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 12 cycles left
      [java] Process 9 is executing C: 30 RC: 16 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 15 cycles left
      [java] ******Clock: 56******
      [java] Process Terminated: 4 300
-     [java] Free Memory Slots (4): 
-     [java] Base: 0 Size: 100
-     [java] Base: 193 Size: 207
-     [java] Base: 690 Size: 310
-     [java] Base: 2035 Size: 13
-     [java] 
+     [java] Free frame number: 24
      [java] ---Fragmentation---
-     [java] Total free memory: 630 bytes | Largest hole: 310 bytes | Holes: 4
-     [java] External fragmentation: 50.79% (1 - largest hole / total free memory)
-     [java] 50% rule: 4 holes for N = 25 allocated blocks -> holes/N = 0.16 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 118 bytes
      [java] Process 5 is executing C: 40 RC: 1 T: MEMORY F: false STORE,400,45
-     [java] Accessing Segment 3 and offset 142
-     [java] Segment 3 Base: 1258 + Offset: 142 = Physical Address: 1400
-     [java] The data 45 is stored in: 1400
+     [java] The data 45 is stored in: 592
      [java] MEMORY OPERATION EXECUTION DONE
      [java] Process 6 is executing C: 30 RC: 6 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 5 cycles left
      [java] Process 7 is executing C: 30 RC: 9 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 8 cycles left
      [java] Process 8 is executing C: 30 RC: 12 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 11 cycles left
      [java] Process 9 is executing C: 30 RC: 15 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 14 cycles left
      [java] ******Clock: 57******
      [java] Executing CPU instruction
      [java] Process 6 is executing C: 30 RC: 5 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 4 cycles left
      [java] Process 7 is executing C: 30 RC: 8 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 7 cycles left
      [java] Process 8 is executing C: 30 RC: 11 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 10 cycles left
      [java] Process 9 is executing C: 30 RC: 14 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 13 cycles left
      [java] ******Clock: 58******
      [java] Executing CPU instruction
      [java] Process 6 is executing C: 30 RC: 4 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 3 cycles left
      [java] Process 7 is executing C: 30 RC: 7 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 6 cycles left
      [java] Process 8 is executing C: 30 RC: 10 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 9 cycles left
      [java] Process 9 is executing C: 30 RC: 13 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 12 cycles left
      [java] ******Clock: 59******
      [java] Process Terminated: 5 448
-     [java] Free Memory Slots (4): 
-     [java] Base: 0 Size: 100
-     [java] Base: 193 Size: 207
-     [java] Base: 690 Size: 758
-     [java] Base: 2035 Size: 13
-     [java] 
+     [java] Free frame number: 26
      [java] ---Fragmentation---
-     [java] Total free memory: 1078 bytes | Largest hole: 758 bytes | Holes: 4
-     [java] External fragmentation: 29.68% (1 - largest hole / total free memory)
-     [java] 50% rule: 4 holes for N = 20 allocated blocks -> holes/N = 0.20 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 118 bytes
      [java] Process 6 is executing C: 30 RC: 3 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 2 cycles left
      [java] Process 7 is executing C: 30 RC: 6 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 5 cycles left
      [java] Process 8 is executing C: 30 RC: 9 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 8 cycles left
      [java] Process 9 is executing C: 30 RC: 12 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 11 cycles left
      [java] ******Clock: 60******
      [java] Process 6 is executing C: 30 RC: 2 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION - 1 cycles left
      [java] Process 7 is executing C: 30 RC: 5 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 4 cycles left
      [java] Process 8 is executing C: 30 RC: 8 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 7 cycles left
      [java] Process 9 is executing C: 30 RC: 11 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 10 cycles left
      [java] ******Clock: 61******
      [java] Process 6 is executing C: 30 RC: 1 T: MEMORY F: false STORE,60,46
-     [java] Accessing Segment 3 and offset 14
-     [java] Segment 3 Base: 1494 + Offset: 14 = Physical Address: 1508
-     [java] The data 46 is stored in: 1508
+     [java] The data 46 is stored in: 124
      [java] MEMORY OPERATION EXECUTION DONE
      [java] Process 7 is executing C: 30 RC: 4 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 3 cycles left
      [java] Process 8 is executing C: 30 RC: 7 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 6 cycles left
      [java] Process 9 is executing C: 30 RC: 10 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 9 cycles left
      [java] ******Clock: 62******
      [java] Executing CPU instruction
      [java] Process 7 is executing C: 30 RC: 3 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 2 cycles left
      [java] Process 8 is executing C: 30 RC: 6 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 5 cycles left
      [java] Process 9 is executing C: 30 RC: 9 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 8 cycles left
      [java] ******Clock: 63******
      [java] Executing CPU instruction
      [java] Process 7 is executing C: 30 RC: 2 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION - 1 cycles left
      [java] Process 8 is executing C: 30 RC: 5 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 4 cycles left
      [java] Process 9 is executing C: 30 RC: 8 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 7 cycles left
      [java] ******Clock: 64******
      [java] Process Terminated: 6 80
-     [java] Free Memory Slots (4): 
-     [java] Base: 0 Size: 100
-     [java] Base: 193 Size: 207
-     [java] Base: 690 Size: 838
-     [java] Base: 2035 Size: 13
-     [java] 
+     [java] Free frame number: 27
      [java] ---Fragmentation---
-     [java] Total free memory: 1158 bytes | Largest hole: 838 bytes | Holes: 4
-     [java] External fragmentation: 27.63% (1 - largest hole / total free memory)
-     [java] 50% rule: 4 holes for N = 15 allocated blocks -> holes/N = 0.27 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 70 bytes
      [java] Process 7 is executing C: 30 RC: 1 T: MEMORY F: false STORE,500,47
-     [java] Accessing Segment 4 and offset 2
-     [java] Segment 4 Base: 1844 + Offset: 2 = Physical Address: 1846
-     [java] The data 47 is stored in: 1846
+     [java] The data 47 is stored in: 756
      [java] MEMORY OPERATION EXECUTION DONE
      [java] Process 8 is executing C: 30 RC: 4 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 3 cycles left
      [java] Process 9 is executing C: 30 RC: 7 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 6 cycles left
      [java] ******Clock: 65******
      [java] Executing CPU instruction
      [java] Process 8 is executing C: 30 RC: 3 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 2 cycles left
      [java] Process 9 is executing C: 30 RC: 6 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 5 cycles left
      [java] ******Clock: 66******
      [java] Executing CPU instruction
      [java] Process 8 is executing C: 30 RC: 2 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION - 1 cycles left
      [java] Process 9 is executing C: 30 RC: 5 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 4 cycles left
      [java] ******Clock: 67******
      [java] Process Terminated: 7 550
-     [java] Free Memory Slots (4): 
-     [java] Base: 0 Size: 100
-     [java] Base: 193 Size: 389
-     [java] Base: 690 Size: 1206
-     [java] Base: 2035 Size: 13
-     [java] 
+     [java] Free frame number: 29
      [java] ---Fragmentation---
-     [java] Total free memory: 1708 bytes | Largest hole: 1206 bytes | Holes: 4
-     [java] External fragmentation: 29.39% (1 - largest hole / total free memory)
-     [java] 50% rule: 4 holes for N = 10 allocated blocks -> holes/N = 0.40 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 44 bytes
      [java] Process 8 is executing C: 30 RC: 1 T: MEMORY F: false STORE,200,48
-     [java] Accessing Segment 3 and offset 40
-     [java] Segment 3 Base: 100 + Offset: 40 = Physical Address: 140
-     [java] The data 48 is stored in: 140
+     [java] The data 48 is stored in: 776
      [java] MEMORY OPERATION EXECUTION DONE
      [java] Process 9 is executing C: 30 RC: 4 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 3 cycles left
      [java] ******Clock: 68******
      [java] Executing CPU instruction
      [java] Process 9 is executing C: 30 RC: 3 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 2 cycles left
      [java] ******Clock: 69******
      [java] Executing CPU instruction
      [java] Process 9 is executing C: 30 RC: 2 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION - 1 cycles left
      [java] ******Clock: 70******
      [java] Process Terminated: 8 280
-     [java] Free Memory Slots (3): 
-     [java] Base: 0 Size: 650
-     [java] Base: 690 Size: 1325
-     [java] Base: 2035 Size: 13
-     [java] 
+     [java] Free frame number: 31
      [java] ---Fragmentation---
-     [java] Total free memory: 1988 bytes | Largest hole: 1325 bytes | Holes: 3
-     [java] External fragmentation: 33.35% (1 - largest hole / total free memory)
-     [java] 50% rule: 3 holes for N = 5 allocated blocks -> holes/N = 0.60 (expected ~0.5)
-     [java] Internal fragmentation: 0 bytes
+     [java] Internal fragmentation: 4 bytes
      [java] Process 9 is executing C: 30 RC: 1 T: MEMORY F: false STORE,40,49
-     [java] Accessing Segment 3 and offset 5
-     [java] Segment 3 Base: 670 + Offset: 5 = Physical Address: 675
-     [java] The data 49 is stored in: 675
+     [java] The data 49 is stored in: 680
      [java] MEMORY OPERATION EXECUTION DONE
      [java] ******Clock: 71******
      [java] Executing CPU instruction
@@ -2227,13 +1430,8 @@ run:
      [java] Executing CPU instruction
      [java] ******Clock: 73******
      [java] Process Terminated: 9 60
-     [java] Free Memory Slots (1): 
-     [java] Base: 0 Size: 2048
-     [java] 
+     [java] Free frame number: 32
      [java] ---Fragmentation---
-     [java] Total free memory: 2048 bytes | Largest hole: 2048 bytes | Holes: 1
-     [java] External fragmentation: 0.00% (1 - largest hole / total free memory)
-     [java] 50% rule: no allocated blocks
      [java] Internal fragmentation: 0 bytes
      [java] ******SIMULATION FINISHES******
      [java] ******Process Execution******
@@ -2249,11 +1447,8 @@ run:
      [java] Process list:
      [java] PID: 0 Size: 100 t_init: 0 t_finished: 45
      [java] PMM:
-     [java] Segment: 0 Base: 0 Limit: 4 Dirty: false
-     [java] Segment: 1 Base: 4 Limit: 29 Dirty: false
-     [java] Segment: 2 Base: 33 Limit: 24 Dirty: true
-     [java] Segment: 3 Base: 57 Limit: 33 Dirty: false
-     [java] Segment: 4 Base: 90 Limit: 10 Dirty: false
+     [java] Page: 0 Frame: 0 Valid: false Dirty: true Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 6
@@ -2266,11 +1461,8 @@ run:
      [java] 
      [java] PID: 1 Size: 100 t_init: 1 t_finished: 21
      [java] PMM:
-     [java] Segment: 0 Base: 100 Limit: 4 Dirty: false
-     [java] Segment: 1 Base: 104 Limit: 29 Dirty: true
-     [java] Segment: 2 Base: 133 Limit: 24 Dirty: false
-     [java] Segment: 3 Base: 157 Limit: 33 Dirty: false
-     [java] Segment: 4 Base: 190 Limit: 10 Dirty: false
+     [java] Page: 0 Frame: 1 Valid: false Dirty: true Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 6
@@ -2283,11 +1475,10 @@ run:
      [java] 
      [java] PID: 2 Size: 200 t_init: 2 t_finished: 51
      [java] PMM:
-     [java] Segment: 0 Base: 200 Limit: 9 Dirty: false
-     [java] Segment: 1 Base: 209 Limit: 57 Dirty: false
-     [java] Segment: 2 Base: 266 Limit: 49 Dirty: false
-     [java] Segment: 3 Base: 315 Limit: 66 Dirty: true
-     [java] Segment: 4 Base: 381 Limit: 19 Dirty: false
+     [java] Page: 0 Frame: 2 Valid: false Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 2 Frame: 6 Valid: false Dirty: true Clock: 10
+     [java] Page: 3 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 6
@@ -2300,11 +1491,11 @@ run:
      [java] 
      [java] PID: 3 Size: 300 t_init: 3 t_finished: 24
      [java] PMM:
-     [java] Segment: 0 Base: 400 Limit: 13 Dirty: false
-     [java] Segment: 1 Base: 413 Limit: 86 Dirty: false
-     [java] Segment: 2 Base: 499 Limit: 73 Dirty: false
-     [java] Segment: 3 Base: 572 Limit: 99 Dirty: true
-     [java] Segment: 4 Base: 671 Limit: 29 Dirty: false
+     [java] Page: 0 Frame: 3 Valid: false Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 2 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 3 Frame: 7 Valid: false Dirty: true Clock: 13
+     [java] Page: 4 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 6
@@ -2317,11 +1508,11 @@ run:
      [java] 
      [java] PID: 4 Size: 300 t_init: 4 t_finished: 57
      [java] PMM:
-     [java] Segment: 0 Base: 700 Limit: 13 Dirty: false
-     [java] Segment: 1 Base: 713 Limit: 86 Dirty: false
-     [java] Segment: 2 Base: 799 Limit: 73 Dirty: false
-     [java] Segment: 3 Base: 872 Limit: 99 Dirty: true
-     [java] Segment: 4 Base: 971 Limit: 29 Dirty: false
+     [java] Page: 0 Frame: 4 Valid: false Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 2 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 3 Frame: 8 Valid: false Dirty: true Clock: 16
+     [java] Page: 4 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 6
@@ -2334,11 +1525,13 @@ run:
      [java] 
      [java] PID: 5 Size: 448 t_init: 5 t_finished: 60
      [java] PMM:
-     [java] Segment: 0 Base: 1000 Limit: 20 Dirty: false
-     [java] Segment: 1 Base: 1020 Limit: 129 Dirty: false
-     [java] Segment: 2 Base: 1149 Limit: 109 Dirty: false
-     [java] Segment: 3 Base: 1258 Limit: 149 Dirty: true
-     [java] Segment: 4 Base: 1407 Limit: 41 Dirty: false
+     [java] Page: 0 Frame: 5 Valid: false Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 2 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 3 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 4 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 5 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 6 Frame: 9 Valid: false Dirty: true Clock: 19
      [java] 
      [java] PIL:
      [java] Current instruction: 6
@@ -2351,11 +1544,8 @@ run:
      [java] 
      [java] PID: 6 Size: 80 t_init: 30 t_finished: 65
      [java] PMM:
-     [java] Segment: 0 Base: 1448 Limit: 4 Dirty: false
-     [java] Segment: 1 Base: 1452 Limit: 23 Dirty: false
-     [java] Segment: 2 Base: 1475 Limit: 19 Dirty: false
-     [java] Segment: 3 Base: 1494 Limit: 27 Dirty: true
-     [java] Segment: 4 Base: 1521 Limit: 7 Dirty: false
+     [java] Page: 0 Frame: 1 Valid: false Dirty: true Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 6
@@ -2368,11 +1558,15 @@ run:
      [java] 
      [java] PID: 7 Size: 550 t_init: 32 t_finished: 68
      [java] PMM:
-     [java] Segment: 0 Base: 1528 Limit: 24 Dirty: false
-     [java] Segment: 1 Base: 1552 Limit: 158 Dirty: false
-     [java] Segment: 2 Base: 1710 Limit: 134 Dirty: false
-     [java] Segment: 3 Base: 400 Limit: 182 Dirty: false
-     [java] Segment: 4 Base: 1844 Limit: 52 Dirty: true
+     [java] Page: 0 Frame: 3 Valid: false Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 2 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 3 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 4 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 5 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 6 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 7 Frame: 11 Valid: false Dirty: true Clock: 37
+     [java] Page: 8 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 6
@@ -2385,11 +1579,11 @@ run:
      [java] 
      [java] PID: 8 Size: 280 t_init: 34 t_finished: 71
      [java] PMM:
-     [java] Segment: 0 Base: 1896 Limit: 12 Dirty: false
-     [java] Segment: 1 Base: 1908 Limit: 80 Dirty: false
-     [java] Segment: 2 Base: 582 Limit: 68 Dirty: false
-     [java] Segment: 3 Base: 100 Limit: 93 Dirty: true
-     [java] Segment: 4 Base: 1988 Limit: 27 Dirty: false
+     [java] Page: 0 Frame: 7 Valid: false Dirty: false Clock: 0
+     [java] Page: 1 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 2 Frame: -1 Valid: false Dirty: false Clock: 0
+     [java] Page: 3 Frame: 12 Valid: false Dirty: true Clock: 40
+     [java] Page: 4 Frame: -1 Valid: false Dirty: false Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 6
@@ -2402,11 +1596,7 @@ run:
      [java] 
      [java] PID: 9 Size: 60 t_init: 36 t_finished: 74
      [java] PMM:
-     [java] Segment: 0 Base: 650 Limit: 3 Dirty: false
-     [java] Segment: 1 Base: 653 Limit: 17 Dirty: false
-     [java] Segment: 2 Base: 2015 Limit: 15 Dirty: false
-     [java] Segment: 3 Base: 670 Limit: 20 Dirty: true
-     [java] Segment: 4 Base: 2030 Limit: 5 Dirty: false
+     [java] Page: 0 Frame: 10 Valid: false Dirty: true Clock: 0
      [java] 
      [java] PIL:
      [java] Current instruction: 6
@@ -2420,36 +1610,28 @@ run:
      [java] 
      [java] 50 - 40
      [java] 
-     [java] 120 - 41
+     [java] 84 - 41
      [java] 
-     [java] 140 - 48
+     [java] 124 - 46
      [java] 
-     [java] 350 - 42
+     [java] 406 - 42
      [java] 
-     [java] 650 - 43
+     [java] 506 - 43
      [java] 
-     [java] 675 - 49
+     [java] 520 - 44
      [java] 
-     [java] 900 - 44
+     [java] 592 - 45
      [java] 
-     [java] 1400 - 45
+     [java] 680 - 49
      [java] 
-     [java] 1508 - 46
+     [java] 756 - 47
      [java] 
-     [java] 1846 - 47
+     [java] 776 - 48
      [java] 
-     [java] Free Memory Slots (1): 
-     [java] Base: 0 Size: 2048
-     [java] 
+     [java] Free frame number: 32
      [java] ---Fragmentation---
-     [java] Total free memory: 2048 bytes | Largest hole: 2048 bytes | Holes: 1
-     [java] External fragmentation: 0.00% (1 - largest hole / total free memory)
-     [java] 50% rule: no allocated blocks
      [java] Internal fragmentation: 0 bytes
      [java] ******Fragmentation Indicators******
-     [java] Free Memory Slot Manager: WORST_FIT
-     [java] Requests rejected by external fragmentation: 0
-     [java] Peak external fragmentation: 58.92%
 
 BUILD SUCCESSFUL
-Total time: 4 seconds
+Total time: 1 second

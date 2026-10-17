@@ -12,34 +12,63 @@ import ur_os.memory.paging.PageTableEntry;
  *
  * @author user
  */
-public class PVMM_LRU extends ProcessVirtualMemoryManager{
+public class PVMM_LRU extends ProcessVirtualMemoryManager {
 
-    public PVMM_LRU(){
+    public PVMM_LRU() {
         type = ProcessVirtualMemoryManagerType.LRU;
     }
-    
+
     @Override
-    public int getVictim(LinkedList<Integer> memoryAccesses, PageTable pt) {
-        LinkedList<Integer> pages = new LinkedList();
-        int size = memoryAccesses.size()-1;
-        LinkedList<Integer> validListPages = new LinkedList();
-        int i=0;
-        for(PageTableEntry pte: pt.getList()){
-            if(pte.isValid()){
-                validListPages.add(i);
+    public int getVictim(
+            LinkedList<Integer> memoryAccesses,
+            PageTable pt) {
+
+        LinkedList<Integer> validPages = new LinkedList<>();
+        LinkedList<Integer> accessedPages = new LinkedList<>();
+
+        // Obtener las paginas que estan cargadas en memoria.
+        int pageNumber = 0;
+
+        for (PageTableEntry pte : pt.getList()) {
+
+            if (pte.isValid()) {
+                validPages.add(pageNumber);
             }
-            i++;
+
+            pageNumber++;
         }
-        int temp;
-        while(size >= 0 && pages.size()<validListPages.size()){
-            temp = memoryAccesses.get(size);
-            if(!pages.contains(temp) && validListPages.contains(temp)){
-                pages.add(memoryAccesses.get(size));
+
+        // Si no hay paginas validas, no existe una victima.
+        if (validPages.isEmpty()) {
+            return -1;
+        }
+
+        // Recorrer los accesos desde el mas reciente al mas antiguo.
+        for (int i = memoryAccesses.size() - 1; i >= 0; i--) {
+
+            int page = memoryAccesses.get(i);
+
+            if (validPages.contains(page)
+                    && !accessedPages.contains(page)) {
+
+                accessedPages.add(page);
             }
-            size--;
         }
-        
-        return pages.getLast();
+
+        // Considerar paginas validas que no aparecen en el historial.
+        for (int page : validPages) {
+
+            if (!accessedPages.contains(page)) {
+                return page;
+            }
+        }
+
+        // La ultima pagina de esta lista es la menos recientemente usada.
+        if (!accessedPages.isEmpty()) {
+            return accessedPages.getLast();
+        }
+
+        // Proteccion adicional: no se encontro una victima.
+        return -1;
     }
-    
 }

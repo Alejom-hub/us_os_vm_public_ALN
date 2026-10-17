@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ur_os.memory.paging;
 
 import ur_os.memory.MemoryAddress;
@@ -11,76 +8,159 @@ import ur_os.memory.SystemMemoryManager;
 import ur_os.system.InterruptType;
 import ur_os.system.OS;
 
-/**
- *
- * @author user
- */
-public class SMM_Paging extends SystemMemoryManager{
+public class SMM_Paging extends SystemMemoryManager {
 
     public SMM_Paging(OS os) {
         super(os);
         type = MemoryManagerType.PAGING;
     }
-    
-    
-    
+
     @Override
-    public int getPhysicalAddress(int logicalAddress, ProcessMemoryManager pmm, boolean store){
-        
-        if(pmm.getType() == MemoryManagerType.PAGING){
-            PMM_Paging pmmp = (PMM_Paging)pmm;
-        
-            //INCLUDE THE STORE VALUE TO MARK DIRTY THE PAGE
-            MemoryAddress la = pmmp.getPageMemoryAddressFromLocalAddress(logicalAddress);
-            
-            MemoryAddress pa = pmmp.getFrameMemoryAddressFromLogicalMemoryAddress(la);
-            
-            
-            //Only valid for Virtual Memory
-            if(pa == null){
-                //There was a page fault, so the page needs to be brought to memory from swap
-                
-                int pageVictim = pmmp.getVictim(); //Find a page that needs to leave memory if there is no space
-                int frameVictimInSwap;
-                
-                int frameVictim;
-                
-                if(pageVictim == -1){ //If no victim was found because there are still frames available
-                    frameVictim = getOS().getFreeFrame(); //Obtain a new free frame to store the page from swap
-                    frameVictimInSwap = -1;
-                }else{//If there are no free frames, then a pageVictim was selected
-                    frameVictim = pmmp.getFrameMemoryAddressFromLogicalMemoryAddress(pageVictim); //Find the frame number in memory of the victim page
-                    frameVictimInSwap = pmmp.getVFrameMemoryAddressFromLogicalMemoryAddress(pageVictim); //Find the frame number in Swap memory of the victim page
-                }
-                
-                int pageToLoad = la.getDivision(); //Get the pageID of the desired page
-                int frameToLoadInSwap= pmmp.getVFrameMemoryAddressFromLogicalMemoryAddress(pageToLoad); //Find the frame number in Swap memory of the desired page
-                
-                MemoryPageExchange mpe = new MemoryPageExchange(pageVictim, frameVictimInSwap, frameVictim, pageToLoad, frameToLoadInSwap);
-                
-                if(pageVictim != -1){ //If there was a page identified to leave memory, then it may have to be sent to swap memory
-                    if(pmmp.isPageDirty(pageVictim)){ //If the page is dirty, then it must be updated in the swap memory
-                        mpe.setFullExchange(true); //This is a full exchange, so the frame does not have to be freed
-                        getOS().interrupt(InterruptType.STORE_PAGE, pmmp.getProcess(),mpe); //Send the frame in memory of page la to swap memory. All the information needed is in mpe
-                        pmmp.setPageValid(mpe.getFrameVictim(),false); //Set the newly unloaded page as invalid
+    public int getPhysicalAddress(int logicalAddress,
+                                  ProcessMemoryManager pmm,
+                                  boolean store) {
+
+        if (pmm.getType() == MemoryManagerType.PAGING) {
+
+            PMM_Paging pmmp = (PMM_Paging) pmm;
+
+            // Obtener el numero de pagina y el desplazamiento.
+            MemoryAddress la =
+                    pmmp.getPageMemoryAddressFromLocalAddress(logicalAddress);
+
+            // Rechazar direcciones logicas invalidas.
+            if (la == null
+                    || la.getDivision() < 0
+                    || la.getOffset() < 0) {
+
+                System.out.println(
+                        "Error: direccion logica invalida: "
+                        + logicalAddress
+                );
+
+                return -1;
+            }
+
+            // Buscar la direccion fisica de la pagina.
+            MemoryAddress pa =
+                    pmmp.getFrameMemoryAddressFromLogicalMemoryAddress(la);
+
+            // Si la pagina no esta en RAM, ocurre un fallo de pagina.
+            if (pa == null) {
+
+                int pageVictim = -1;
+                int frameVictimInSwap = -1;
+
+                // Primero intentar obtener un marco fisico libre.
+                int frameVictim = getOS().getFreeFrame();
+
+                // Si no hay marcos libres, buscar una pagina para reemplazar.
+                if (frameVictim < 0) {
+
+                    pageVictim = pmmp.getVictim();
+
+                    if (pageVictim < 0) {
+                        System.out.println(
+                                "Error: no hay marcos fisicos disponibles "
+                                + "ni paginas para reemplazar."
+                        );
+
+                        return -1;
+                    }
+
+                    // Obtener el marco fisico de la pagina victima.
+                    frameVictim =
+                            pmmp.getFrameMemoryAddressFromLogicalMemoryAddress(
+                                    pageVictim
+                            );
+
+                    // Obtener la ubicacion de la victima en swap.
+                    frameVictimInSwap =
+                            pmmp.getVFrameMemoryAddressFromLogicalMemoryAddress(
+                                    pageVictim
+                            );
+
+                    if (frameVictim < 0 || frameVictimInSwap < 0) {
+                        System.out.println(
+                                "Error: no se pudo obtener el marco "
+                                + "de la pagina victima."
+                        );
+
+                        return -1;
                     }
                 }
-                
-                getOS().interrupt(InterruptType.LOAD_PAGE, pmmp.getProcess(),mpe); //Load the frame in swap of page la to real memory
-                pmmp.setFrameID(pageToLoad, frameVictim);
-                pmmp.getPT().getList().get(pageToLoad).setClock(getOS().getClock());//Set the loading time to the page
-                return getPhysicalAddress(logicalAddress, pmm, store); //Try again!
-            }else{
-                if(store){
-                    pmmp.setPageDirty(pa.getDivision(),true); //Set the accessed page for storage as dirty
+
+                int pageToLoad = la.getDivision();
+
+                // Obtener la ubicacion de la pagina solicitada en swap.
+                int frameToLoadInSwap =
+                        pmmp.getVFrameMemoryAddressFromLogicalMemoryAddress(
+                                pageToLoad
+                        );
+
+                if (frameToLoadInSwap < 0) {
+                    System.out.println(
+                            "Error: no se encontro el marco de la pagina "
+                            + "solicitada en swap."
+                    );
+
+                    return -1;
                 }
+
+                // Preparar la transferencia entre swap y memoria principal.
+                MemoryPageExchange mpe = new MemoryPageExchange(
+                        pageVictim,
+                        frameVictimInSwap,
+                        frameVictim,
+                        pageToLoad,
+                        frameToLoadInSwap
+                );
+
+                if (pageVictim != -1) {
+
+                    // Guardar la victima en swap si fue modificada.
+                    if (pmmp.isPageDirty(pageVictim)) {
+
+                        mpe.setFullExchange(true);
+
+                        getOS().interrupt(
+                                InterruptType.STORE_PAGE,
+                                pmmp.getProcess(),
+                                mpe
+                        );
+                    }
+
+                    // La victima deja de estar residente en RAM.
+                    pmmp.setPageValid(pageVictim, false);
+                }
+
+                // Cargar la pagina solicitada en el marco fisico elegido.
+                getOS().interrupt(
+                        InterruptType.LOAD_PAGE,
+                        pmmp.getProcess(),
+                        mpe
+                );
+
+                // Registrar la nueva ubicacion de la pagina en RAM.
+                pmmp.setFrameID(pageToLoad, frameVictim);
+
+                pmmp.getPT().getList().get(pageToLoad)
+                        .setClock(getOS().getClock());
+
+                // Volver a traducir la direccion logica.
+                return getPhysicalAddress(logicalAddress, pmm, store);
+
+            } else {
+
+                // Marcar la pagina como sucia cuando se escribe en ella.
+                if (store) {
+                    pmmp.setPageDirty(la.getDivision(), true);
+                }
+
                 return pa.getAddress();
             }
-            
-            
-        
         }
+
         return -1;
-    };
-    
+    }
 }

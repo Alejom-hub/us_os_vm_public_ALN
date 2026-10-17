@@ -28,13 +28,10 @@ public class SMM_Segmentation extends SystemMemoryManager{
         if(pmm.getType() == MemoryManagerType.SEGMENTATION){
             PMM_Segmentation pmms = (PMM_Segmentation)pmm;
 
-            //The store value marks the segment as dirty
-            MemoryAddress la = pmms.getSegmentMemoryAddressFromLocalAddress(logicalAddress, store);
+            //INCLUDE THE STORE VALUE TO MARK DIRTY THE SEGMENT
+            MemoryAddress la = pmms.getSegmentMemoryAddressFromLocalAddress(logicalAddress);
             MemoryAddress pa = pmms.getPhysicalMemoryAddressFromLogicalMemoryAddress(la);
 
-            if(pa == null){
-                return -1; //Illegal address
-            }
             return pa.getAddress();
         }
         return -1;
