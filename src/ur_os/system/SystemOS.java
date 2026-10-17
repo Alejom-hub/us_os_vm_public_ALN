@@ -75,8 +75,9 @@ public class SystemOS implements Runnable{
         //initSimulationQueueBestWorstFit();
         //initSimulationQueueClassExample();
         //initSimulationQueueMedianFit();
-        //initSimulationQueueFragmentation();
-        initSimulationQueuePagingLRU();
+        initSimulationQueueFragmentation();
+        //initSimulationQueuePagingLRU();
+        //initSimulationQueueBestWorstFit();
         
 
         showProcesses();

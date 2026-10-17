@@ -29,7 +29,7 @@ public class SMM_Segmentation extends SystemMemoryManager{
             PMM_Segmentation pmms = (PMM_Segmentation)pmm;
 
             //INCLUDE THE STORE VALUE TO MARK DIRTY THE SEGMENT
-            MemoryAddress la = pmms.getSegmentMemoryAddressFromLocalAddress(logicalAddress);
+            MemoryAddress la = pmms.getSegmentMemoryAddressFromLocalAddress(logicalAddress, store);
             MemoryAddress pa = pmms.getPhysicalMemoryAddressFromLogicalMemoryAddress(la);
 
             return pa.getAddress();
