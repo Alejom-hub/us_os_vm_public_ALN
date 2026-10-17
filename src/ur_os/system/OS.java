@@ -57,7 +57,7 @@ public class OS {
 
     public static final int MAX_PROCESS_PRIORITY = 10; //Page size in bytes
     public static final int PAGE_SIZE = 64; //Page size in bytes
-    public static final MemoryManagerType SMM = MemoryManagerType.PAGING; //CONTIGUOUS, SEGMENTATION or PAGING
+    public static final MemoryManagerType SMM = MemoryManagerType.PAGING;
     public static final FreeMemorySlotManagerType MSM = FreeMemorySlotManagerType.BEST_FIT;
     
     public static final ProcessVirtualMemoryManagerType PVMM = ProcessVirtualMemoryManagerType.LRU;
@@ -437,7 +437,6 @@ public class OS {
             limit = pmm.getSegment(i).getLimit();
             m = this.getMemorySlot(limit);
             pmm.getSegment(i).setMemorySlot(m);
-            pmm.getSegment(i).setValid(true); //The segment is loaded in memory
         }
     }
     
