@@ -57,12 +57,12 @@ public class OS {
 
     public static final int MAX_PROCESS_PRIORITY = 10; //Page size in bytes
     public static final int PAGE_SIZE = 64; //Page size in bytes
-    public static final MemoryManagerType SMM = MemoryManagerType.PAGING;
+    public static final MemoryManagerType SMM = MemoryManagerType.SEGMENTATION; //CONTIGUOUS, SEGMENTATION or PAGING
     public static final FreeMemorySlotManagerType MSM = FreeMemorySlotManagerType.BEST_FIT;
     
     public static final ProcessVirtualMemoryManagerType PVMM = ProcessVirtualMemoryManagerType.LRU;
     public static final int FRAMES_PER_PROCESS = 3; //Maximum number of frames assigned to a process, if virtual memory is on
-    public static final boolean VIRTUAL_MEMORY_MODE_ON = true; //Maximum number of frames assigned to a process, if virtual memory is on
+    public static final boolean VIRTUAL_MEMORY_MODE_ON = false; //Maximum number of frames assigned to a process, if virtual memory is on
     
     
     public OS(SystemOS system, CPU cpu, IOQueue ioq){
@@ -365,34 +365,6 @@ public class OS {
     The report flag avoids repeating the message every cycle while it waits.
     */
     public boolean canAllocate(int size, boolean report){
-        // Paging necesita al menos un marco fisico para que el proceso pueda iniciar.
-        if(SMM == MemoryManagerType.PAGING){
-            FreeFramesManager freeFrames = (FreeFramesManager)fmm;
-            FreeFramesManager freeSwapFrames = (FreeFramesManager)fvmm;
-
-            int pagesRequired = size > 0
-                    ? (size + PAGE_SIZE - 1) / PAGE_SIZE
-                    : 1; // Si el tamano aun no esta definido, se valida al menos una pagina.
-
-            boolean hasPhysicalFrame = freeFrames.getSize() >= (VIRTUAL_MEMORY_MODE_ON ? 1 : pagesRequired);
-            boolean hasSwapFrames = freeSwapFrames.getSize() >= pagesRequired;
-
-            if(hasPhysicalFrame && hasSwapFrames){
-                return true;
-            }
-
-            if(report){
-                if(!hasPhysicalFrame){
-                    System.out.println("NOT ENOUGH MEMORY - No hay suficientes marcos fisicos libres para crear el proceso.");
-                }
-                if(!hasSwapFrames){
-                    System.out.println("NOT ENOUGH MEMORY - No hay suficientes marcos libres en swap para crear el proceso.");
-                }
-            }
-            return false;
-        }
-
-        // Se conserva la validacion original para asignacion contigua sin memoria virtual.
         if(SMM != MemoryManagerType.CONTIGUOUS || VIRTUAL_MEMORY_MODE_ON){
             return true;
         }
@@ -437,6 +409,7 @@ public class OS {
             limit = pmm.getSegment(i).getLimit();
             m = this.getMemorySlot(limit);
             pmm.getSegment(i).setMemorySlot(m);
+            pmm.getSegment(i).setValid(true); //The segment is loaded in memory
         }
     }
     
@@ -454,51 +427,25 @@ public class OS {
         PMM_Paging pmmp = (PMM_Paging)p.getPMM();
         FreeFramesManager vfreeFrames = (FreeFramesManager)fvmm;
         FreeFramesManager freeFrames = (FreeFramesManager)fmm;
-
-        int ptSize = pmmp.getVPT().getSize(); // Numero de paginas virtuales del proceso.
-
-        // Verificamos todos los recursos antes de retirar marcos, para no dejar
-        // la tabla de paginas parcialmente asignada si no hay memoria suficiente.
-        int physicalFramesRequired = VIRTUAL_MEMORY_MODE_ON ? 1 : ptSize;
-        if(ptSize > vfreeFrames.getSize()){
-            System.out.println("Error - No hay suficientes marcos disponibles en swap para el proceso " + p.getPid());
-            return;
-        }
-        if(physicalFramesRequired > freeFrames.getSize()){
-            System.out.println("Error - No hay suficientes marcos fisicos para el proceso " + p.getPid());
-            return;
-        }
-
-        // Reservar los marcos virtuales en swap y construir la tabla de paginas.
-        for(int i = 0; i < ptSize; i++){
-            int swapFrame = vfreeFrames.getFrame();
-            if(swapFrame < 0){
-                System.out.println("Error - No se pudo reservar un marco de swap para el proceso " + p.getPid());
-                return;
-            }
-            pmmp.addVFrameID(swapFrame, true);
-
-            if(VIRTUAL_MEMORY_MODE_ON){
-                pmmp.addFrameID(-1); // La pagina inicia sin marco fisico residente.
-            }else{
-                int physicalFrame = freeFrames.getFrame();
-                if(physicalFrame < 0){
-                    System.out.println("Error - No se pudo reservar un marco fisico para el proceso " + p.getPid());
-                    return;
+        
+        int ptSize = pmmp.getVPT().getSize(); //Get the number of pages of the process
+        if(ptSize <= vfreeFrames.getSize()){
+            for (int i = 0; i < ptSize; i++) {
+                pmmp.addVFrameID(vfreeFrames.getFrame(),true); //Add frames in swap memory.
+                if(VIRTUAL_MEMORY_MODE_ON){
+                    pmmp.addFrameID(-1); //Create pagetable, without frame allocation
+                }else{
+                    pmmp.addFrameID(freeFrames.getFrame(),true); //Create pagetable, with frame allocation
                 }
-                pmmp.addFrameID(physicalFrame, true);
             }
+        }else{
+            System.out.println("Error - Process size larger than available memory");
         }
-
-        // Con memoria virtual, solo la primera pagina se carga inicialmente en RAM.
+        
         if(VIRTUAL_MEMORY_MODE_ON){
-            int firstFrame = freeFrames.getFrame();
-            if(firstFrame >= 0){
-                pmmp.setFrameID(0, firstFrame);
-            }else{
-                System.out.println("Error - No se pudo asignar el marco fisico inicial al proceso " + p.getPid());
-            }
+            pmmp.setFrameID(0, freeFrames.getFrame()); //Assign the first page to a frame and it becomes valid
         }
+        
     }
     
     public void showProcesses(){

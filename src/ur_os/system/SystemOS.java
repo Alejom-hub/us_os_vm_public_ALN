@@ -50,7 +50,7 @@ public class SystemOS implements Runnable{
     
     public static final int MEMORY_SIZE = 2048; //2KB (0 - 2047) - Lab BestFit/WorstFit
     //public static final int MEMORY_SIZE = 1_048_576; //1MB
-    public static final int SWAP_MEMORY_SIZE = 1_048_576; // 1 MB
+    public static final int SWAP_MEMORY_SIZE = 1_073_741_824; //1 GB
     
     protected ArrayList<Process> processes;
     ArrayList<Integer> execution;
@@ -59,7 +59,7 @@ public class SystemOS implements Runnable{
 
     public SystemOS(SimulationType simType) {
         memory = new Memory(MEMORY_SIZE);
-        swap = new SwapMemory(SWAP_MEMORY_SIZE);
+        swap = new SwapMemory(MEMORY_SIZE);
         cpu = new CPU(memory,swap);
         ioq = new IOQueue();
         os = new OS(this, cpu, ioq);
@@ -75,8 +75,7 @@ public class SystemOS implements Runnable{
         //initSimulationQueueBestWorstFit();
         //initSimulationQueueClassExample();
         //initSimulationQueueMedianFit();
-        //initSimulationQueueFragmentation();
-        initSimulationQueuePagingLRU();
+        initSimulationQueueFragmentation();
         
 
         showProcesses();
@@ -566,67 +565,6 @@ public class SystemOS implements Runnable{
         temp = new MemoryInstruction(MemoryOperationType.STORE, 40, (byte)49, 30);
         p.addInstruction(temp);
         p.addCPUInstructions(2);
-        p.addInstruction(new EndInstruction());
-        processes.add(p);
-
-        clock = 0;
-    }
-
-    /*
-     * Scenario dedicated to testing Paging with LRU.
-     * The process has 33 pages, while physical memory has 32 frames.
-     * It accesses pages 0 through 31, accesses page 0 again, and then
-     * accesses page 32. When page 32 is requested, LRU should select
-     * page 1 as the victim, provided the access history is recorded
-     * correctly and all page loads succeed.
-     */
-    public void initSimulationQueuePagingLRU(){
-        Process p = new Process(0, 0);
-
-        // 33 pages of 64 bytes = 2112 bytes.
-        p.setSize(33 * OS.PAGE_SIZE);
-
-        // ProcessInstructionList requires the first instruction to be CPU.
-        // Without this initial CPU instruction, the first STORE is rejected
-        // and the process can end up with an empty instruction list.
-        p.addCPUInstructions(1);
-
-        // Access pages 0 through 31 to fill all 32 physical frames.
-        for (int pagina = 0; pagina < 32; pagina++) {
-            int direccionLogica = pagina * OS.PAGE_SIZE;
-            byte dato = (byte) (pagina + 1);
-
-            p.addInstruction(
-                new MemoryInstruction(
-                    MemoryOperationType.STORE,
-                    direccionLogica,
-                    dato,
-                    1
-                )
-            );
-        }
-
-        // Access page 0 again, making it recently used.
-        p.addInstruction(
-            new MemoryInstruction(
-                MemoryOperationType.STORE,
-                0,
-                (byte) 100,
-                1
-            )
-        );
-
-        // Request page 32 when all physical frames are occupied.
-        // LRU should select page 1 as the victim.
-        p.addInstruction(
-            new MemoryInstruction(
-                MemoryOperationType.STORE,
-                32 * OS.PAGE_SIZE,
-                (byte) 101,
-                1
-            )
-        );
-
         p.addInstruction(new EndInstruction());
         processes.add(p);
 
