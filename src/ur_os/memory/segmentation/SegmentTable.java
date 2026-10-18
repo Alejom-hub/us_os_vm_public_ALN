@@ -85,8 +85,7 @@ public class SegmentTable {
         int segment = -1;
         int offset = -1;
 
-        //The logical address is relative to the whole program, so the segments
-        //are traversed accumulating their limits until the one containing it is found
+        
         int accumulated = 0;
         for (int i = 0; i < segmentTable.size(); i++) {
             int limit = segmentTable.get(i).getLimit();
@@ -103,7 +102,7 @@ public class SegmentTable {
             return new MemoryAddress(segment, offset);
         }
 
-        //For Virtual Memory
+
         if(store){
             this.segmentTable.get(segment).setDirty();
         }
