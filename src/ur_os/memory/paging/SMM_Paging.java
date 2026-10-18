@@ -131,14 +131,12 @@ public class SMM_Paging extends SystemMemoryManager {
                     pmmp.setPageValid(pageVictim, false);
                 }
 
-                // Cargar la pagina solicitada en el marco fisico elegido.
+                
                 getOS().interrupt(
                         InterruptType.LOAD_PAGE,
                         pmmp.getProcess(),
                         mpe
                 );
-
-                // Registrar la nueva ubicacion de la pagina en RAM.
                 pmmp.setFrameID(pageToLoad, frameVictim);
 
                 pmmp.getPT().getList().get(pageToLoad)
