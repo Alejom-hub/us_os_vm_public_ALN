@@ -51,12 +51,9 @@ public class SMM_Paging extends SystemMemoryManager {
                 int pageVictim = -1;
                 int frameVictimInSwap = -1;
 
-                // Primero intentar obtener un marco fisico libre.
+                
                 int frameVictim = getOS().getFreeFrame();
-
-                // Si no hay marcos libres, buscar una pagina para reemplazar.
                 if (frameVictim < 0) {
-
                     pageVictim = pmmp.getVictim();
 
                     if (pageVictim < 0) {
