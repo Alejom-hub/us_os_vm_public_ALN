@@ -84,8 +84,6 @@ public class SegmentTable {
     public MemoryAddress getSegmentMemoryAddressFromLocalAddress(int locAdd, boolean store){
         int segment = -1;
         int offset = -1;
-
-        
         int accumulated = 0;
         for (int i = 0; i < segmentTable.size(); i++) {
             int limit = segmentTable.get(i).getLimit();
@@ -112,10 +110,8 @@ public class SegmentTable {
     }
     
     public MemoryAddress getPhysicalMemoryAddressFromLogicalMemoryAddress(MemoryAddress m){
-
         int segment = m.getDivision();
         int offset = m.getOffset();
-
         if(segment < 0 || segment >= segmentTable.size()){
             System.out.println("Error - Illegal Memory Address Request: segment "+segment+" does not exist");
             return new MemoryAddress(-1, 0); //getAddress() = -1
@@ -123,13 +119,11 @@ public class SegmentTable {
 
         SegmentTableEntry ste = segmentTable.get(segment);
 
-        //The offset must be inside the segment, otherwise it is a segmentation fault
         if(offset < 0 || offset >= ste.getLimit()){
             System.out.println("Error - Segmentation fault: offset "+offset+" exceeds the limit "+ste.getLimit()+" of segment "+segment);
             return new MemoryAddress(-1, 0); //getAddress() = -1
         }
 
-        //Physical address = base of the segment + offset (getAddress() adds both)
         System.out.println("Segment "+segment+" Base: "+ste.getBase()+" + Offset: "+offset+" = Physical Address: "+(ste.getBase()+offset));
         return new MemoryAddress(ste.getBase(), offset);
     }
